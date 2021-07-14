@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="TEXTURA_PLATAFORMA" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<g>
+	<rect x="0" y="0" fill-rule="evenodd" clip-rule="evenodd" fill="#121620" width="50" height="50"/>
+	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#26324B" points="6.985,2.298 25.042,2.492 44.189,2.688 47.253,7.03 
+		47.651,26.157 46.881,41.001 44.97,46.531 23.499,46.717 6.677,45.107 3.47,43.344 2.568,31.242 2.605,5.871 	"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#414A5F" d="M2.596,12.058c5.11,2.143,6.135,4.904,5.385,13.291
+		c-0.75,8.387-3.76,18.119,3.272,15.938c6.524-2.024,36.459,2.327,35.704-1.742l-0.075,1.456l-1.911,5.53l-21.47,0.187L6.677,45.107
+		L3.47,43.344L2.568,31.242L2.596,12.058z"/>
+	<g>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#121620" d="M38.044,11.784c1.447,0,2.628-1.181,2.628-2.628
+			c0-1.447-1.181-2.628-2.628-2.628c-1.447,0-2.628,1.181-2.628,2.628C35.416,10.603,36.597,11.784,38.044,11.784z"/>
+		<circle fill-rule="evenodd" clip-rule="evenodd" fill="#121620" cx="41.986" cy="16.477" r="1.127"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#121620" d="M40.86,39.194c1.447,0,2.628-1.181,2.628-2.628
+			c0-1.447-1.181-2.628-2.628-2.628c-1.447,0-2.628,1.181-2.628,2.628C38.231,38.013,39.412,39.194,40.86,39.194z"/>
+		<circle fill-rule="evenodd" clip-rule="evenodd" fill="#121620" cx="39.92" cy="42.572" r="0.938"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#121620" d="M8.849,39.38c1.499,0,2.721-1.223,2.721-2.721
+			c0-1.499-1.223-2.723-2.721-2.723s-2.723,1.224-2.723,2.723C6.126,38.158,7.35,39.38,8.849,39.38z"/>
+		<circle fill-rule="evenodd" clip-rule="evenodd" fill="#121620" cx="7.065" cy="42.197" r="0.939"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#121620" d="M8.943,11.033c1.964,0,3.567-1.603,3.567-3.567
+			s-1.603-3.567-3.567-3.567S5.376,5.501,5.376,7.465S6.979,11.033,8.943,11.033z"/>
+		<circle fill-rule="evenodd" clip-rule="evenodd" fill="#121620" cx="17.58" cy="10.469" r="0.751"/>
+	</g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#414A5F" d="M14.41,2.378c2.487,2.002,5.77,3.932,8.845,3.522
+		c6.06-0.808,16.564-1.414,17.372,1.414c0.808,2.828,5.656,6.06,5.05,9.493c-0.606,3.434-3.231,15.756-1.616,16.968
+		c0.48,0.359,1.689,0.632,3.151,0.834l0.438-8.452L47.253,7.03l-3.064-4.342L25.042,2.492L14.41,2.378z"/>
+</g>
+</svg>

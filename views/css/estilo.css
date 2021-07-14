@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    position: relative;
+    background-color: #172025;
+    background-image: url(../img/intro/back.svg);
+    background-repeat: repeat-x;
+    background-position: top;
+    overflow-y: hidden;
+}
+
+/**
+==========================
+marco
+
+===============*/
+
+#marco{
+    position: absolute;
+    width: 1060px;
+    height: 560px;
+border-radius: 10px 10px 0 0;
+box-shadow: 0px 5px 10px black;
+background: #172025;
+top: -30px;
+left: 50%;
+margin-left: -530px;
+}
+
+/**
+==========================
+contenedor
+
+===============*/
+
+
+#contenedor{
+    position: relative;
+    margin: 5vh auto;
+    width: 1000px;
+    height: 500px;
+    background: white;
+}
+
+
+
+/**=======================
+
+Ingresos
+
+====================*/
+
+#contenedor #ingreso{
+
+    position: absolute;
+    width:1000px;
+    height:500px;
+    top:0;
+    left:0px;
+    background: url('../img/intro/ingreso.svg');
+
+
+}
+
+
+
+#contenedor #ingreso #ingresoFacebook{
+    position:absolute;
+    width:300px;
+    top:300px;
+    left:50%;
+    margin-left:-150px;
+    cursor:pointer;
+}
+
+
+#contenedor #ingreso #ingresoFacebook img{
+    width:50px;
+    height:50px;
+    float:left;
+}
+
+
+
+ #contenedor #ingreso #ingresoFacebook button{
+    width:249px;
+    height:50px;
+    margin-left:1px;
+    border:0;
+    background:#3B5998;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+
+/**
+==========================
+INICIO
+
+===============*/
+
+#contenedor #inicio{
+    position:absolute;
+    width:1000px;
+    height:500px;
+top:0;
+background: url(../img/intro/inicio.svg);
+font-family: 'Patric Hand',cursive;
+}
+
+#contenedor #inicio #cerrarSesion a{
+    position : absolute;
+    right:0%;
+text-align: center;
+color: aliceblue;
+top:-25px;
+}
+
+#contenedor #inicio #saludo{
+    position : absolute;
+    left:50%;
+    width:1000px;
+    text-align: center;
+    margin-left: -500px;
+color: aliceblue;
+
+}
+
+
+#contenedor #inicio .niveles{
+
+    float:left;
+    position:relative;
+    width:33.33%;
+    height:300px;
+    margin-top:200px;
+    text-align:center;
+    
+
+}
+
+
+#contenedor #inicio .niveles .puntaje{
+
+    position: absolute;
+    top:-120px;
+    left:50%;
+    width: 100%;
+    margin-left: -50%;
+    color: aliceblue;
+    font-size:20px;
+}
+
+
+#contenedor #inicio .niveles button{
+    display: block;
+    width: 100px;
+    margin: 10px 0;
+    padding: 10px;
+    border:0;
+    background:#131C17;
+    color:white;
+    font-size:20px;
+    border-radius:10px 0 10px 0;
+    font-family: 'Patric Hand',cursive;
+    cursor: pointer;
+}
+
+
+#contenedor #inicio .niveles button:hover{
+width:120px;
+margin:15px 0;
+transition:all .1s;
+}
+
+#contenedor #inicio .niveles button:active{
+
+background:green;
+}
+
+#contenedor #inicio .niveles .puntajes{
+    background: rgba(0, 0, 0, .8);
+    padding: 10px;
+    margin:10px;
+    border-radius: 10px;
+    color:yellow;
+}
+
+#contenedor #inicio .niveles .puntajes ul li{
+    display: inline-block;
+    width: 30%;
+    margin:20px 2px 5px 2px;
+}
+
+
+#contenedor #inicio .niveles .puntajes ul li img{
+
+border-radius: 100%;
+width: 30px;
+ }
+
+ #contenedor #inicio .niveles .puntajes ul li h3{
+
+    font-weight: 100;
+    color:white;
+
+ }
+
+ 
+ #contenedor #inicio .niveles .puntajes ul li h2{
+
+    font-weight: 100;
+
+ }
+
+
+ /**
+==========================
+Canvas
+
+===============*/
+
+#contenedor #lienzo{
+    display:none;
+}
+
+
+/**
+==========================
+preload
+===============*/
+
+#contenedor #carga{
+    display:none;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 1000px;
+    height: 500px;
+    background: black;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    opacity: 1;
+    transition: opacity 1s ease;
+    font-family: 'Patrick Hand',cursive;
+}
+
+#contenedor #carga #preload{
+    padding-top:17% ;
+}
+
+
+/**
+==========================
+footer
+
+===============*/
+
+footer{
+    position: relative;
+    padding: 8px;
+    font-family: sans-serif;
+    color:rgba(255, 255, 255, .5);
+    font-size: 12px;
+}
+
+
+/***=====================
+Pantalla Vertical
+=======================**/
+
+#vertical{
+    display: none;
+}
+
+@media all and (orientation: portrait){
+    #contenedor{
+        display: none;
+    }
+    #vertical{
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        background: url(../img/vertical.jpg);
+    }
+}
