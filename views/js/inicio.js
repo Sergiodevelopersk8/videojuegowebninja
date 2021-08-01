@@ -10,9 +10,9 @@ var inicio = {
 
 	iniciar: function(){
 
-		var identificador = "22222";		
-		var primer_nombre = "julio";
-		var foto = "views/img/intro/julio.png";	
+		var identificador = "1111";		
+		var primer_nombre = "Maria";
+		var foto = "views/img/intro/maria.png";	
 
 		//AJAX: Asynchronous JavaScript And XML
 
@@ -43,6 +43,8 @@ var inicio = {
 	elegirNivel: function(event){
 
 		datos.nivel = event.getAttribute("nivel");
+		datos.id = event.getAttribute("id");
+		console.log("datos id",datos.id);
 		inicio.inicioNiveles(datos.nivel);
 
 	},

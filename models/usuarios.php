@@ -6,7 +6,8 @@ class GestorUsuariosModel{
 
     static public function seleccionarUsuariosModel($datosModel){
 
-$stmt= Conexion::conectar()->prepare("SELECT id, identificador, primer_nombre, foto, nivel1, puntaje_nivel1, nivel2, puntaje_nivel2, nivel3, puntaje_nivel3 FROM usuarios WHERE identificador = :identificador");
+$stmt= Conexion::conectar()->prepare("SELECT id,  primer_nombre, foto, nivel1, 
+puntaje_nivel1, nivel2, puntaje_nivel2, nivel3, puntaje_nivel3 FROM usuarios WHERE identificador = :identificador");
 
 $stmt->bindParam(":identificador",$datosModel["identificador"], PDO::PARAM_INT);
 
@@ -14,6 +15,7 @@ $stmt->execute();
 
 return $stmt->fetch();
 
+$stmt ->close();
 
     }
 
@@ -38,7 +40,7 @@ if($stmt->execute()){
 else{
     return "error";
 }
-//$stmt->close();
+$stmt->close();
 }
 
 /**seleccionar puntajes */
@@ -52,6 +54,50 @@ $stmt -> close();
 
 }
 
+/**===============
+ * GUARDAR PUNTAJES
+ * 
+ * ==================
+ */
+
+static public function guardarPuntajesModel($datosModel, $tabla){
+
+ $numero_nivel= $datosModel["numero_nivel"];
+
+ $puntaje_nivel= $datosModel["puntaje_nivel"];
+
+$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $numero_nivel= :nivel, $puntaje_nivel= :puntaje WHERE id = :id");
+
+$stmt -> bindParam(":nivel", $datosModel["nivel"], PDO::PARAM_STR);
+$stmt -> bindParam(":puntaje", $datosModel["puntaje"], PDO::PARAM_STR);
+$stmt -> bindParam(":id", $datosModel["id"], PDO::PARAM_INT);
+
+if($stmt->execute()){
+    return "ok";
+}
+
+else{
+    return "error";
+
+}
+
+$stmt->close();
+
+
+}
+
+static public function seleccionarPuntajesModel($datosModel,$tabla){
+
+    $stmt = Conexion::conectar()->prepare("SELECT  nivel1, puntaje_nivel1, nivel2, puntaje_nivel2, nivel3, puntaje_nivel3 FROM $tabla WHERE id=:id ");
+
+    $stmt->bindParam(":id",$datosModel["id"],PDO::PARAM_INT);
+
+    $stmt->execute();
+
+    return $stmt ->fetch();
+    $stmt->close();
+
+}
 
 }
 

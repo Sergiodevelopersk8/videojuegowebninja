@@ -18,27 +18,24 @@ ctx.clearRect(0,0,canvas.width,canvas.height);
 plano 3
  		=============================================*/
 
- ctx.drawImage(datos.plano3, datos.desplazamientoEscenario, 0, datos.plano3.naturalWidth, datos.plano3.naturalHeight);
- ctx.drawImage(datos.plano3, datos.desplazamientoEscenario+1000, 0, datos.plano3.naturalWidth, datos.plano3.naturalHeight);
- ctx.drawImage(datos.plano3, datos.desplazamientoEscenario+2000, 0, datos.plano3.naturalWidth, datos.plano3.naturalHeight);
+ ctx.drawImage(datos.plano3, datos.desplazamientoEscenario/5, 0, datos.plano3.naturalWidth, datos.plano3.naturalHeight);
+ ctx.drawImage(datos.plano3, datos.desplazamientoEscenario/5+1000, 0, datos.plano3.naturalWidth, datos.plano3.naturalHeight);
 
 
 		/*=============================================
 plano2
  		=============================================*/
 
-  ctx.drawImage(datos.plano2, datos.desplazamientoEscenario, 0, datos.plano2.naturalWidth, datos.plano2.naturalHeight);
-  ctx.drawImage(datos.plano2, datos.desplazamientoEscenario+1000, 0, datos.plano2.naturalWidth, datos.plano2.naturalHeight);
-  ctx.drawImage(datos.plano2, datos.desplazamientoEscenario+2000, 0, datos.plano2.naturalWidth, datos.plano2.naturalHeight);		
+  ctx.drawImage(datos.plano2, datos.desplazamientoEscenario/3.5, 0, datos.plano2.naturalWidth, datos.plano2.naturalHeight);
+  ctx.drawImage(datos.plano2, datos.desplazamientoEscenario/3.5+1000, 0, datos.plano2.naturalWidth, datos.plano2.naturalHeight);
 
 
 		/*=============================================
 Plano1
  		=============================================*/
 
-   ctx.drawImage(datos.plano1, datos.desplazamientoEscenario, 0, datos.plano1.naturalWidth, datos.plano1.naturalHeight);
-   ctx.drawImage(datos.plano1, datos.desplazamientoEscenario+1000, 0, datos.plano1.naturalWidth, datos.plano1.naturalHeight);
-   ctx.drawImage(datos.plano1, datos.desplazamientoEscenario+2000, 0, datos.plano1.naturalWidth, datos.plano1.naturalHeight);		
+   ctx.drawImage(datos.plano1, datos.desplazamientoEscenario/2, 0, datos.plano1.naturalWidth, datos.plano1.naturalHeight);
+   ctx.drawImage(datos.plano1, datos.desplazamientoEscenario/2+1000, 0, datos.plano1.naturalWidth, datos.plano1.naturalHeight);
 
 
 		/*=============================================
@@ -76,9 +73,8 @@ Jugador
 		PLANO 0
 		=============================================*/
 
-        ctx.drawImage(datos.plano0, datos.desplazamientoEscenario, 0, datos.plano0.naturalWidth, datos.plano0.naturalHeight);
-		ctx.drawImage(datos.plano0, datos.desplazamientoEscenario+1000, 0, datos.plano0.naturalWidth, datos.plano0.naturalHeight);
-		ctx.drawImage(datos.plano0, datos.desplazamientoEscenario+2000, 0, datos.plano0.naturalWidth, datos.plano0.naturalHeight);		
+        ctx.drawImage(datos.plano0, datos.desplazamientoEscenario/1.5, 0, datos.plano0.naturalWidth, datos.plano0.naturalHeight);
+		ctx.drawImage(datos.plano0, datos.desplazamientoEscenario/1.5+1000, 0, datos.plano0.naturalWidth, datos.plano0.naturalHeight);
 		
 
 

@@ -11,7 +11,7 @@ body{
     background-image: url(../img/intro/back.svg);
     background-repeat: repeat-x;
     background-position: top;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 /**

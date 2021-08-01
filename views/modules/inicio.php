@@ -29,10 +29,10 @@ nivel 1
 ------------------------>
 
 <div id="nivel1" class="niveles">
-    <div class="puntaje"><?php echo $_SESSION["puntaje_nivel1"]?>pts</div>
+    <div class="puntaje"><?php echo $_SESSION["puntaje_nivel1"];?>pts</div>
 
     <img src="views/img/intro/checkLevel1.svg">
-    <center><button onclick="inicio.elegirNivel(this)"nivel="1">Ingresar</button></center>
+    <center><button onclick="inicio.elegirNivel(this)"nivel="1" id="<?php  echo $_SESSION["id"];?>">Ingresar</button></center>
 
     <div class="puntajes">
         <h2>Mejores Niveles</h2>
@@ -60,7 +60,7 @@ nivel 2
 if($_SESSION["nivel2"]=="ok"){
     
     echo '<img src="views/img/intro/checkLevel2.svg"> 
-    <center><button onclick="inicio.elegirNivel(this)"nivel="2">Ingresar</button></center>';
+    <center><button onclick="inicio.elegirNivel(this)"nivel="2"  id="'.$_SESSION["id"] .'">Ingresar</button></center>';
 
 }
 else
@@ -103,7 +103,7 @@ nivel 3
 if($_SESSION["nivel3"]=="ok"){
     
     echo '<img src="views/img/intro/checkLevel3.svg"> 
-    <center><button onclick="inicio.elegirNivel(this)"nivel="3">Ingresar</button></center>';
+    <center><button onclick="inicio.elegirNivel(this)"nivel="3" id="'. $_SESSION["id"].'">Ingresar</button></center>';
 
 }
 else
@@ -144,7 +144,7 @@ else
 </div>
 
 
-<canvas id="lienzo" width="3000px" height="500px"></canvas>
+<canvas id="lienzo" width="1000px" height="500px"></canvas>
 
 
  <!----preload------->

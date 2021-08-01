@@ -20,6 +20,7 @@ if($respuestaSeleccionar || $respuestaInsertar == "ok"){
 session_start();
 
 $_SESSION["validar"] = true;
+$_SESSION["id"] = $respuestaSeleccionar["id"];
 $_SESSION["primer_nombre"]=$respuestaSeleccionar["primer_nombre"];
 $_SESSION["foto"]=$respuestaSeleccionar["foto"];
 $_SESSION["nivel1"]=$respuestaSeleccionar["nivel1"];
@@ -60,6 +61,53 @@ public function puntajesNivelesController($datos){
 
 }
 
+static public function guardarPuntajesController($datos){
+
+$numeroNivel=0;
+
+if($datos["numeroNivel"]==3){
+
+$numeroNivel=3;
+
+}
+
+if($datos["numeroNivel"]<3){
+   $numeroNivel=$datos["numeroNivel"] + 1;
+}
+
+$datosController = array("nivel"=>$datos["nivel"], 
+                         "puntaje"=>$datos["puntaje"],
+                         "numero_nivel"=>"nivel".$numeroNivel,
+                         "puntaje_nivel"=>"puntaje_nivel".$datos["numeroNivel"],
+                         "id"=>$datos["id"]);
+
+//$respuesta = GestorUsuariosController::guardarPuntajesController($datosController,"usuarios");
+
+
+$respuesta = GestorUsuariosModel::guardarPuntajesModel($datosController,"usuarios");
+
+
+if($respuesta == "ok"){
+
+   $respuesta1 = GestorUsuariosModel::seleccionarPuntajesModel($datosController,"usuarios");
+
+session_start();
+
+  $_SESSION["nivel1"]=$respuesta1["nivel1"];
+  $_SESSION["puntaje_nivel1"]=$respuesta1["puntaje_nivel1"];
+  
+  $_SESSION["nivel2"]=$respuesta1["nivel2"];
+  $_SESSION["puntaje_nivel2"]=$respuesta1["puntaje_nivel2"];
+  
+  $_SESSION["nivel3"]=$respuesta1["nivel3"];
+  $_SESSION["puntaje_nivel3"]=$respuesta1["puntaje_nivel3"];
+  
+
+   echo "ok";
+
+}
+
+}
 
 
 }

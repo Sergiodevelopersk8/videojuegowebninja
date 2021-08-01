@@ -25,6 +25,7 @@ variables del objeto datos
 ** */
 
 var datos={
+    id:0,
     nivel: null,
     plano3: null,
     plano2:null,
@@ -43,5 +44,7 @@ var datos={
     derecha: false,
     movimiento: 0,
     desplazamientoEscenario: 0,
-    velocidad: 5
+    velocidad: 10,
+    limiteEscenario:-1995,
+    movimientoJugador:0
 }
