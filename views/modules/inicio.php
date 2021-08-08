@@ -78,8 +78,8 @@ else
     <ul>
 
     <?php
-    $puntajes_nivel1 = new GestorUsuariosController();
-    $puntajes_nivel1 ->puntajesNivelesController("puntaje_nivel2");
+    $puntajes_nivel2 = new GestorUsuariosController();
+    $puntajes_nivel2 ->puntajesNivelesController("puntaje_nivel2");
     
     
     ?>
@@ -124,8 +124,8 @@ else
     <ul>
 
     <?php
-    $puntajes_nivel1 = new GestorUsuariosController();
-    $puntajes_nivel1 ->puntajesNivelesController("puntaje_nivel3");
+    $puntajes_nivel3 = new GestorUsuariosController();
+    $puntajes_nivel3 ->puntajesNivelesController("puntaje_nivel3");
     
     
     ?>

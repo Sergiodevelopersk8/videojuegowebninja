@@ -148,17 +148,18 @@ if(!datos.izquierda && !datos.derecha)
 cancelAnimationFrame(animacion);
 var xhr = new XMLHttpRequest();
 var nivel = "ok";
-var puntaje="200";
+var puntaje = "200";
 var numeroNivel = datos.nivel;
 var id = datos.id;
 var url="views/ajax/usuarios.php";
 xhr.open("POST", url, true);
 xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-xhr.send("nivel=" + nivel + "& puntaje" + puntaje + "& numeroNivel=" + numeroNivel + "& id=" + id);
+xhr.send("nivel=" + nivel + "& puntaje=" + puntaje + "& numeroNivel=" + numeroNivel + "& id=" + id);
+
 xhr.onreadystatechange = function(){
 
   if((xhr.readyState == 4) && (xhr.status == 200)){
-    
+    console.log("resultado", xhr.responseText);
 if(xhr.responseText =="ok"){
 
   
@@ -184,5 +185,9 @@ if(xhr.responseText =="ok"){
 brave://settings/?search=borrar
 
 opera://settings/clearBrowserData
+
+http://localhost/phpmyadmin/index.php?route=/sql&db=blackninja&table=usuarios&pos=0
+
+
 
 */ 

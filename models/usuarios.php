@@ -64,7 +64,7 @@ static public function guardarPuntajesModel($datosModel, $tabla){
 
  $numero_nivel= $datosModel["numero_nivel"];
 
- $puntaje_nivel= $datosModel["puntaje_nivel"];
+ $puntaje_nivel = $datosModel["puntaje_nivel"];
 
 $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $numero_nivel= :nivel, $puntaje_nivel= :puntaje WHERE id = :id");
 
@@ -88,9 +88,9 @@ $stmt->close();
 
 static public function seleccionarPuntajesModel($datosModel,$tabla){
 
-    $stmt = Conexion::conectar()->prepare("SELECT  nivel1, puntaje_nivel1, nivel2, puntaje_nivel2, nivel3, puntaje_nivel3 FROM $tabla WHERE id=:id ");
+    $stmt = Conexion::conectar()->prepare("SELECT  nivel1, puntaje_nivel1, nivel2, puntaje_nivel2, nivel3, puntaje_nivel3 FROM $tabla WHERE id= :id ");
 
-    $stmt->bindParam(":id",$datosModel["id"],PDO::PARAM_INT);
+    $stmt->bindParam(":id", $datosModel["id"], PDO::PARAM_INT);
 
     $stmt->execute();
 

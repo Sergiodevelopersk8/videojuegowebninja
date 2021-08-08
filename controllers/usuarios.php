@@ -77,8 +77,8 @@ if($datos["numeroNivel"]<3){
 
 $datosController = array("nivel"=>$datos["nivel"], 
                          "puntaje"=>$datos["puntaje"],
-                         "numero_nivel"=>"nivel".$numeroNivel,
-                         "puntaje_nivel"=>"puntaje_nivel".$datos["numeroNivel"],
+                         "numero_nivel"=> "nivel".$numeroNivel,
+                         "puntaje_nivel"=> "puntaje_nivel".$datos["numeroNivel"],
                          "id"=>$datos["id"]);
 
 //$respuesta = GestorUsuariosController::guardarPuntajesController($datosController,"usuarios");

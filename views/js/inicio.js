@@ -10,9 +10,9 @@ var inicio = {
 
 	iniciar: function(){
 
-		var identificador = "1111";		
-		var primer_nombre = "Maria";
-		var foto = "views/img/intro/maria.png";	
+		var identificador = "3333";		
+		var primer_nombre = "Juan";
+		var foto = "views/img/intro/juan.png";	
 
 		//AJAX: Asynchronous JavaScript And XML
 

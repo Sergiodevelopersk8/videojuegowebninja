@@ -29,8 +29,8 @@ public $puntaje;
 public $numeroNivel;
 public $id;
 
-
-public function gestordePuntajesAjax(){
+/*gestordePuntajesAjax */
+public function gestorPuntajesAjax(){
 
 $datos = array("nivel" => $this -> nivel,
                "puntaje" => $this -> puntaje,
@@ -70,7 +70,7 @@ objeto paso niveles
         $b -> puntaje = $_POST["puntaje"];
         $b -> numeroNivel = $_POST["numeroNivel"];
         $b -> id = $_POST["id"];
-        $b -> gestordePuntajesAjax();
+        $b -> gestorPuntajesAjax();
     
 
      }
