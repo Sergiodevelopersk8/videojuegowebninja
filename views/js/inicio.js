@@ -44,7 +44,9 @@ var inicio = {
 
 		datos.nivel = event.getAttribute("nivel");
 		datos.id = event.getAttribute("id");
-		console.log("datos id",datos.id);
+		if(screenfull.enabled){
+			screenfull.request(document.querySelector("#contenedor"));
+		}
 		inicio.inicioNiveles(datos.nivel);
 
 	},
@@ -223,6 +225,8 @@ var inicio = {
 			if(numeroArchivos == cargarArchivos.length){
 
 				document.querySelector("#lienzo").style.display = "block";
+				
+				document.querySelector("#btnAmpliar").style.display = "block";
 
 				document.querySelector("#carga").style.opacity = 0; 
 

@@ -147,6 +147,8 @@ else
 <canvas id="lienzo" width="1000px" height="500px"></canvas>
 
 
+<div id="btnAmpliar" onclick="ampliar();">Ampliar juego</div>
+
  <!----preload------->
 
  <div id="carga">

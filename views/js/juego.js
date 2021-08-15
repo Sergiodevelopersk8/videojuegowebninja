@@ -186,7 +186,7 @@ brave://settings/?search=borrar
 
 opera://settings/clearBrowserData
 
-http://localhost/phpmyadmin/index.php?route=/sql&db=blackninja&table=usuarios&pos=0
+http://localhost/phpmyadmin
 
 
 

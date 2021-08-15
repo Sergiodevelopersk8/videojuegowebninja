@@ -68,6 +68,7 @@ else
 <script src="views/js/inicio.js"></script>
 <script src="views/js/juego.js"></script>
 <script src="views/js/lienzo.js"></script>
-
+<script src="views/js/ampliarCanvas.js"></script>
+<script src="views/js/screenfull.min.js"></script>
 </body>
 </html>

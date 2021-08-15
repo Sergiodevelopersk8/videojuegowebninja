@@ -219,6 +219,19 @@ width: 30px;
 
  }
 
+ #btnAmpliar{
+     display:none;
+     position: relative;
+     width:150px;
+     padding: 10px 5px;
+     background: green;
+     color: white;
+     text-align: center;
+     line-height: 20px;
+     border-radius: 0px 0px 10px 10px;
+     cursor: pointer;
+     font-family: 'Patrick Hand', cursive;
+ }
 
  /**
 ==========================
