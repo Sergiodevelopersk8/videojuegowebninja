@@ -179,6 +179,49 @@ var inicio = {
 		
 		}*/
 
+	/*=============================================
+		Plataformas
+		=============================================*/
+/*
+		datos.plataforma = new Image();
+		datos.detalles.src = "views/img/nivel"+nivel+"/detalles.png";
+*/
+		if(nivel == 1){
+
+		 	var xhr_plataforma = new XMLHttpRequest();
+			 xhr_plataforma.open("GET", "views/js/json/plataformasNivel1.json", true)
+
+		}
+
+		if(nivel == 2){
+
+			var xhr_plataforma = new XMLHttpRequest();
+			xhr_plataforma.open("GET", "views/js/json/plataformasNivel2.json", true)  
+
+		}
+
+		if(nivel == 3){
+
+      		var xhr_plataforma = new XMLHttpRequest();
+			  xhr_plataforma.open("GET", "views/js/json/plataformasNivel3.json", true)
+		}
+
+		xhr_plataforma.send();
+
+		xhr_plataforma.onreadystatechange = function(){
+
+			if ((xhr_plataforma.readyState == 4)&&(xhr_plataforma.status == 200)){
+
+				datos.plataforma = JSON.parse(xhr_plataforma.responseText)
+
+			}
+		}
+
+
+		/*=============================================
+		Fin de las plataformas 
+		=============================================*/
+
 		/*=============================================
 		JUGADOR
 		=============================================*/
