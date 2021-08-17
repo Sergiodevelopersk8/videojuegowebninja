@@ -47,5 +47,8 @@ var datos={
     velocidad: 10,
     limiteEscenario:-1995,
     movimientoJugador:0,
-    plataforma: []
+    plataforma: [],
+    gravedad: 0,
+    limiteGravedad: 20,
+    peso: .5
 }

@@ -70,6 +70,18 @@ lienzo.canvas();
 datos.jugador_x += datos.movimientoJugador;
  }
 
+/**=============================================
+  Movimiento horizontal plataforma
+ ==============================================*/
+for (var i=0; i< datos.plataforma.length; i++){
+  datos.plataforma[i].x += datos.movimiento;
+}
+
+ /**=============================================
+  Movimiento horizontal plataforma final
+ ==============================================*/
+
+
 
 /**=============================================
   Movimiento izquierda
@@ -127,6 +139,69 @@ if(!datos.izquierda && !datos.derecha)
   datos.movimiento=0;
   datos.movimientoJugador=0;
 }
+
+/**=============================================
+  Gravedad
+ ==============================================*/
+
+datos.jugador_y += datos.gravedad;
+
+if(datos.gravedad < datos.limiteGravedad)
+{
+
+datos.gravedad += datos.peso;
+
+}
+
+
+/**=============================================
+Colisiones con plataformas
+ ==============================================*/
+
+ for(var i = 0; i < datos.plataforma.length; i++){
+
+function colisionesPlataforma(){
+/**no colision pltaforma de arriba hacia abajo */
+
+if((datos.jugador_y + datos.jugador_alto) < datos.plataforma[i].y){
+  return false;
+}
+
+/**no colision pltaforma de abajo hacia arriba */
+
+if(datos.jugador_y  > ( datos.plataforma[i].y + datos.plataforma[i].alto)){
+  return false;
+}
+
+/**no colision pltaforma de izquierda hacia derecha */
+
+if((datos.jugador_x + datos.jugador_ancho) <  datos.plataforma[i].x ){
+  return false;
+}
+
+/**no colision pltaforma de derecha a izquierda */
+
+if(datos.jugador_x  > ( datos.plataforma[i].x + datos.plataforma[i].ancho)){
+  return false;
+}
+
+  return true;
+}
+
+colisionesPlataforma();
+
+
+/**colision pltaforma de arriba hacia abajo*/
+
+
+if(colisionesPlataforma() && (datos.jugador_y + datos.jugador_alto) < datos.plataforma[i].y + datos.gravedad){
+
+datos.gravedad = 0;
+datos.jugador_y = datos.plataforma[i].y - datos.jugador_alto;
+
+}
+
+ }
 
 
 /**=============================================
