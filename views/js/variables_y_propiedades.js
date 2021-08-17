@@ -44,11 +44,13 @@ var datos={
     derecha: false,
     movimiento: 0,
     desplazamientoEscenario: 0,
-    velocidad: 10,
+    velocidad: 5,
     limiteEscenario:-1995,
     movimientoJugador:0,
     plataforma: [],
     gravedad: 0,
     limiteGravedad: 20,
-    peso: .5
+    peso: .5,
+    salto:false,
+    alturaSalto: -10
 }

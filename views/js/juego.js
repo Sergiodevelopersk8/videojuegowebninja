@@ -29,6 +29,8 @@ if(tecla.keyCode == 39){datos.derecha = true;}
 if(tecla.keyCode == 38){datos.salto = true;}
 
 
+
+
     },
 
 soltar: function(tecla){
@@ -199,6 +201,77 @@ if(colisionesPlataforma() && (datos.jugador_y + datos.jugador_alto) < datos.plat
 datos.gravedad = 0;
 datos.jugador_y = datos.plataforma[i].y - datos.jugador_alto;
 
+}
+
+
+/**colision pltaforma de abajo hacia arriba*/
+
+
+if(colisionesPlataforma() && datos.jugador_y- datos.gravedad > ( datos.plataforma[i].y + datos.plataforma[i].alto)){
+
+  datos.gravedad = 1;
+  datos.jugador_y = datos.plataforma[i].y + datos.jugador_alto;
+  
+  }
+
+if(datos.desplazamientoEscenario <= datos.limiteEscenario){
+
+/**colision pltaforma de izquierda a derecha*/
+
+if(colisionesPlataforma() && (datos.jugador_x + datos.jugador_ancho) < datos.plataforma[i].x + datos.movimientoJugador){
+
+  datos.movimientoJugador = 0;
+  datos.jugador_x = datos.plataforma[i].x - datos.jugador_ancho;
+  
+  }
+  
+  
+    /**colision pltaforma de  derecha a izquierda*/
+  
+    if(colisionesPlataforma() && datos.jugador_x + datos.movimientoJugador > (datos.plataforma[i].x + datos.plataforma[i].ancho)){
+  
+      datos.movimientoJugador = 0;
+      datos.jugador_x = datos.plataforma[i].x + datos.plataforma[i].ancho;
+      
+      }
+      
+  
+
+
+}
+
+else{
+
+  
+  /**colision pltaforma de izquierda a derecha*/
+
+if(colisionesPlataforma() && (datos.jugador_x + datos.jugador_ancho) < datos.plataforma[i].x - datos.movimiento){
+
+  datos.movimiento = 0;
+  datos.jugador_x = datos.plataforma[i].x - datos.jugador_ancho;
+  
+  }
+  
+  
+    /**colision pltaforma de  derecha a izquierda*/
+  
+    if(colisionesPlataforma() && datos.jugador_x + datos.movimiento > (datos.plataforma[i].x + datos.plataforma[i].ancho)){
+  
+      datos.movimiento = 0;
+      datos.jugador_x = datos.plataforma[i].x + datos.plataforma[i].ancho;
+      
+      }
+      
+  
+
+}
+
+/**=============================================
+  salto
+ ==============================================*/
+
+if(datos.salto && datos.gravedad == 0 && datos.jugador_y == datos.plataforma[i].y - datos.jugador_alto){
+  datos.gravedad = datos.alturaSalto;
 }
 
  }
