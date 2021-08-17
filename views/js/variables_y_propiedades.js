@@ -52,5 +52,7 @@ var datos={
     limiteGravedad: 20,
     peso: .5,
     salto:false,
-    alturaSalto: -10
+    alturaSalto: -10,
+    sprite_x:0,
+    cicloSprite:0
 }

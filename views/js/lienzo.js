@@ -66,7 +66,7 @@ Jugador
  		=============================================*/
 
 
- ctx.drawImage(datos.imgJugador, 0, 0, 100, 100, datos.jugador_x, datos.jugador_y, datos.jugador_ancho, datos.jugador_alto);
+ ctx.drawImage(datos.imgJugador, datos.sprite_x, 0, 100, 100, datos.jugador_x, datos.jugador_y, datos.jugador_ancho, datos.jugador_alto);
 
  
 

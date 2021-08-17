@@ -228,10 +228,7 @@ var inicio = {
 
 		datos.imgJugador = new Image();
 		datos.imgJugador.src = "views/img/jugador/stop_right.png";
-	/*	datos.imgJugador.onload = function(){
-
-		
-		}*/
+	
 
 		/*=============================================
 		PLANO 0

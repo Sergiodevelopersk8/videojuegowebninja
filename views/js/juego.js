@@ -39,8 +39,8 @@ soltar: function(tecla){
  * soltar tecla
  */
 
- if(tecla.keyCode == 37){datos.izquierda = false};
- if(tecla.keyCode == 39){datos.derecha = false}; 
+ if(tecla.keyCode == 37){datos.izquierda = false; datos.imgJugador.src = "views/img/jugador/stop_left.png";}
+ if(tecla.keyCode == 39){datos.derecha = false; datos.imgJugador.src = "views/img/jugador/stop_right.png";} 
     if(tecla.keyCode == 38){datos.salto = false;}
 
 
@@ -54,6 +54,23 @@ tiempo: function(){
 
 lienzo.canvas();
 
+
+/**=============================================
+ Ciclo sprite
+ ==============================================*/
+
+if(datos.cicloSprite >= 500){
+  datos.cicloSprite = 0;
+}
+else{
+  datos.cicloSprite+=20;
+}
+for(var i =0; i<= datos.cicloSprite; i+=100){
+  if(datos.cicloSprite >= i)
+  {
+    datos.sprite_x = i;
+  }
+}
 
 /**=============================================
   Movimiento horizontal
@@ -91,6 +108,8 @@ for (var i=0; i< datos.plataforma.length; i++){
 
 if(datos.izquierda)
 {
+ // datos.imgJugador.src = "views/img/jugador/run_left.png";
+
   if(datos.desplazamientoEscenario >=  0){
     datos.movimiento=0;
   }
@@ -106,6 +125,15 @@ else{
   else{
 datos.movimiento = datos.velocidad;
   }
+
+  if(datos.gravedad == 0){
+    datos.imgJugador.src = "views/img/jugador/run_left.png";
+  }
+
+  if(datos.salto && datos.gravedad == 0){
+    datos.imgJugador.src = "views/img/jugador/jump_left.png";
+  }
+
 }
 
 
@@ -116,6 +144,7 @@ datos.movimiento = datos.velocidad;
 
  if(datos.derecha)
  {
+  //datos.imgJugador.src = "views/img/jugador/run_right.png";
   if(datos.desplazamientoEscenario <= datos.limiteEscenario){
 
     datos.movimiento=0;
@@ -124,7 +153,17 @@ datos.movimiento = datos.velocidad;
   }
   else{
  datos.movimiento = -datos.velocidad;
+ 
+ 
  } 
+ if(datos.gravedad == 0){
+  datos.imgJugador.src = "views/img/jugador/run_right.png";
+}
+
+if(datos.salto && datos.gravedad == 0){
+  datos.imgJugador.src = "views/img/jugador/jump_right.png";
+}
+
 }
 
  
