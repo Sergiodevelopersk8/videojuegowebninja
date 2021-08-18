@@ -246,10 +246,10 @@ datos.jugador_y = datos.plataforma[i].y - datos.jugador_alto;
 /**colision pltaforma de abajo hacia arriba*/
 
 
-if(colisionesPlataforma() && datos.jugador_y- datos.gravedad > ( datos.plataforma[i].y + datos.plataforma[i].alto)){
+if(colisionesPlataforma() && datos.jugador_y - datos.gravedad > ( datos.plataforma[i].y + datos.plataforma[i].alto)){
 
   datos.gravedad = 1;
-  datos.jugador_y = datos.plataforma[i].y + datos.jugador_alto;
+  datos.jugador_y = datos.plataforma[i].y + datos.plataforma[i].alto;
   
   }
 
