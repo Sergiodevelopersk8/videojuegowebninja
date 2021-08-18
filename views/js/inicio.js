@@ -222,6 +222,59 @@ var inicio = {
 		Fin de las plataformas 
 		=============================================*/
 
+/*=============================================
+	Monedas
+		=============================================*/
+/*
+		datos.plataforma = new Image();
+		datos.detalles.src = "views/img/nivel"+nivel+"/detalles.png";
+*/
+if(nivel == 1){
+
+	var xhr_monedas = new XMLHttpRequest();
+	xhr_monedas.open("GET", "views/js/json/monedasNivel1.json", true)
+
+}
+
+if(nivel == 2){
+
+   var xhr_monedas = new XMLHttpRequest();
+   xhr_monedas.open("GET", "views/js/json/monedasNivel2.json", true)  
+
+}
+
+if(nivel == 3){
+
+	 var xhr_monedas = new XMLHttpRequest();
+	 xhr_monedas.open("GET", "views/js/json/monedasNivel3.json", true)
+}
+
+xhr_monedas.send();
+xhr_monedas.onreadystatechange = function(){
+
+   if ((xhr_monedas.readyState == 4)&&(xhr_monedas.status == 200)){
+
+	   datos.posMonedas = JSON.parse(xhr_monedas.responseText)
+
+	   for(var i =0; i< datos.posMonedas.length; i++){
+		   datos.imgMonedas[i] = new Image();
+		   datos.imgMonedas[i].src="views/img/utileria/monedas.png";
+	   }
+
+   }
+}
+
+
+/*=============================================
+Fin de las monedas
+=============================================*/
+
+
+
+
+
+
+
 		/*=============================================
 		JUGADOR
 		=============================================*/

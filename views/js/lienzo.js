@@ -61,6 +61,18 @@ for(var i = 0; i < datos.bloques.length; i++){
 }
 
 
+
+		/*=============================================
+monedas
+ 		=============================================*/
+
+		 for(var i = 0; i < datos.posMonedas.length; i++){	
+
+			ctx.drawImage(datos.imgMonedas[i], datos.sprite_x, 0, 100, 100, datos.posMonedas[i].x, datos.posMonedas[i].y,
+				datos.posMonedas[i].ancho, datos.posMonedas[i].alto);
+		
+		}
+
 		/*=============================================
 Jugador
  		=============================================*/

@@ -101,6 +101,19 @@ for (var i=0; i< datos.plataforma.length; i++){
  ==============================================*/
 
 
+/**=============================================
+  Movimiento horizontal Monedas
+ ==============================================*/
+ for (var i=0; i< datos.posMonedas.length; i++){
+  datos.posMonedas[i].x += datos.movimiento;
+}
+
+ /**=============================================
+  Movimiento horizontal monedas
+ ==============================================*/
+
+
+
 
 /**=============================================
   Movimiento izquierda

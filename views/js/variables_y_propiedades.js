@@ -55,5 +55,7 @@ var datos={
     alturaSalto: -10,
     sprite_x:0,
     cicloSprite:0,
-    reset: false
+    reset: false,
+    imgMonedas:[],
+    posMonedas:[]
 }
