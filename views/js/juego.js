@@ -315,6 +315,68 @@ if(datos.salto && datos.gravedad == 0 && datos.jugador_y == datos.plataforma[i].
 
  }
 
+ 
+/**=============================================
+  Caida del juegador por fuera del escenario
+ ==============================================*/
+
+ if(datos.jugador_y > 500){
+   datos.reset = true;
+
+ }
+
+ 
+/**=============================================
+  resetear nivel
+ ==============================================*/
+
+if(datos.reset == true){
+
+datos.reset = false;
+datos.gravedad = 0;
+datos.desplazamientoEscenario = 0;
+datos.movimiento = 0;
+datos.jugador_y = 200;
+datos.jugador_x = 70;
+
+
+/**Reinicio de plataformas */
+
+
+if(datos.nivel == 1){
+
+  var xhr_plataforma = new XMLHttpRequest();
+  xhr_plataforma.open("GET", "views/js/json/plataformasNivel1.json", true)
+
+}
+
+if(datos.nivel == 2){
+
+ var xhr_plataforma = new XMLHttpRequest();
+ xhr_plataforma.open("GET", "views/js/json/plataformasNivel2.json", true)  
+
+}
+
+if(datos.nivel == 3){
+
+     var xhr_plataforma = new XMLHttpRequest();
+   xhr_plataforma.open("GET", "views/js/json/plataformasNivel3.json", true)
+}
+
+xhr_plataforma.send();
+
+xhr_plataforma.onreadystatechange = function(){
+
+ if ((xhr_plataforma.readyState == 4)&&(xhr_plataforma.status == 200)){
+
+   datos.plataforma = JSON.parse(xhr_plataforma.responseText)
+
+ }
+}
+
+
+}
+
 
 /**=============================================
   Ejecutando linea de tiempo

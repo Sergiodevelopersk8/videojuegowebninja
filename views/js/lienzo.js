@@ -75,7 +75,7 @@ Jugador
 		=============================================*/
 
 		for(var i = 0; i < datos.plataforma.length; i++){	
-ctx.fillStyle = "rgba(255,0,0,.5)";
+ctx.fillStyle = "rgba(255,0,0,0)";
 			ctx.fillRect(datos.plataforma[i].x, datos.plataforma[i].y, datos.plataforma[i].ancho,
 				  datos.plataforma[i].alto);
 		
