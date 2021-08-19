@@ -270,8 +270,49 @@ Fin de las monedas
 =============================================*/
 
 
+/*=============================================
+Trampas
+=============================================*/
+
+if(nivel == 1){
+
+	var xhr_trampas = new XMLHttpRequest();
+	xhr_trampas.open("GET", "views/js/json/trampasNivel1.json", true)
+
+}
+
+if(nivel == 2){
+
+   var xhr_trampas = new XMLHttpRequest();
+   xhr_trampas.open("GET", "views/js/json/trampasNivel2.json", true)  
+
+}
+
+if(nivel == 3){
+
+	 var xhr_trampas = new XMLHttpRequest();
+	 xhr_trampas.open("GET", "views/js/json/trampasNivel3.json", true)
+}
+
+xhr_trampas.send();
+xhr_trampas.onreadystatechange = function(){
+
+   if ((xhr_trampas.readyState == 4)&&(xhr_trampas.status == 200)){
+
+	   datos.posTrampas = JSON.parse(xhr_trampas.responseText)
+
+	   for(var i =0; i< datos.posTrampas.length; i++){
+		   datos.imgTrampas[i] = new Image();
+		   datos.imgTrampas[i].src="views/img/utileria/trampas.png";
+	   }
+
+   }
+}
 
 
+/*=============================================
+Fin de las trampas
+=============================================*/
 
 
 

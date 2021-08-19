@@ -57,5 +57,7 @@ var datos={
     cicloSprite:0,
     reset: false,
     imgMonedas:[],
-    posMonedas:[]
+    posMonedas:[],
+    imgTrampas:[],
+    posTrampas:[]
 }

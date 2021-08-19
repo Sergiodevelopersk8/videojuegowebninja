@@ -109,9 +109,12 @@ for (var i=0; i< datos.plataforma.length; i++){
 }
 
  /**=============================================
-  Movimiento horizontal monedas
+  Movimiento horizontal trampas
  ==============================================*/
 
+ for( var i = 0; i < datos.posTrampas.length; i++){
+   datos.posTrampas[i].x += datos.movimiento;
+ }
 
 
 
@@ -372,6 +375,48 @@ setTimeout(function(){
 
 
 
+/**=============================================
+  Colisiones con trampas
+ ==============================================*/
+ for(var i = 0; i< datos.posTrampas.length; i++){
+  function colisionesTrampas(){
+
+/*No colisiones con monedas de arriba hacia abajo*/
+if((datos.jugador_y + datos.jugador_alto) <  datos.posTrampas[i].y){return false;}
+
+/**No colisiones con monedas de abajo hacia arriba */
+
+if(datos.jugador_y > (datos.posTrampas[i].y + datos.posTrampas[i].alto)){return false;}
+
+/**No colisiones con monedas de izquierda a derecha */
+
+if((datos.jugador_x + datos.jugador_ancho) < datos.posTrampas[i].x){return false;}
+
+/**No colisiones con monedas de derecha a izquierda */
+
+if(datos.jugador_x > (datos.posTrampas[i].x + datos.posTrampas[i].ancho)) {return false;}
+
+
+
+return true;
+
+  }
+  colisionesTrampas();
+
+if(colisionesTrampas()){
+  datos.imgTrampas[i].src="views/img/utileria/colisionesTrampas.png";
+ datos.imgJugador.src = "views/img/jugador/colision_trampa.png";
+
+}
+
+
+}
+
+
+
+
+
+
  
 /**=============================================
   Caida del jugador por fuera del escenario
@@ -468,6 +513,41 @@ xhr_monedas.onreadystatechange = function(){
    }
 }
 
+
+if(datos.nivel == 1){
+
+	var xhr_trampas = new XMLHttpRequest();
+	xhr_trampas.open("GET", "views/js/json/trampasNivel1.json", true)
+
+}
+
+if(datos.nivel == 2){
+
+   var xhr_trampas = new XMLHttpRequest();
+   xhr_trampas.open("GET", "views/js/json/trampasNivel2.json", true)  
+
+}
+
+if(datos.nivel == 3){
+
+	 var xhr_trampas = new XMLHttpRequest();
+	 xhr_trampas.open("GET", "views/js/json/trampasNivel3.json", true)
+}
+
+xhr_trampas.send();
+xhr_trampas.onreadystatechange = function(){
+
+   if ((xhr_trampas.readyState == 4)&&(xhr_trampas.status == 200)){
+
+	   datos.posTrampas = JSON.parse(xhr_trampas.responseText)
+
+	   for(var i =0; i< datos.posTrampas.length; i++){
+		   datos.imgTrampas[i] = new Image();
+		   datos.imgTrampas[i].src="views/img/utileria/trampas.png";
+	   }
+
+   }
+}
 
 
 
