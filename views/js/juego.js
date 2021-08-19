@@ -328,9 +328,53 @@ if(datos.salto && datos.gravedad == 0 && datos.jugador_y == datos.plataforma[i].
 
  }
 
+/**=============================================
+  Colisiones con monedas
+ ==============================================*/
+for(var i = 0; i< datos.posMonedas.length; i++){
+  function colisionesMonedas(){
+
+/*No colisiones con monedas de arriba hacia abajo*/
+if((datos.jugador_y + datos.jugador_alto) <  datos.posMonedas[i].y){return false;}
+
+/**No colisiones con monedas de abajo hacia arriba */
+
+if(datos.jugador_y > (datos.posMonedas[i].y + datos.posMonedas[i].alto)){return false;}
+
+/**No colisiones con monedas de izquierda a derecha */
+
+if((datos.jugador_x + datos.jugador_ancho) < datos.posMonedas[i].x){return false;}
+
+/**No colisiones con monedas de derecha a izquierda */
+
+if(datos.jugador_x > (datos.posMonedas[i].x + datos.posMonedas[i].ancho)) {return false;}
+
+
+
+return true;
+
+  }
+  colisionesMonedas();
+
+if(colisionesMonedas()){
+  datos.imgMonedas[i].src="views/img/utileria/colisionesMonedas.png";
+  datos.posMonedas[i].y--;
+  var monedasColisionadas = i;
+setTimeout(function(){
+  datos.posMonedas[monedasColisionadas].x = -500;
+  datos.posMonedas[monedasColisionadas].y = -500;
+}, 500)
+
+}
+
+
+}
+
+
+
  
 /**=============================================
-  Caida del juegador por fuera del escenario
+  Caida del jugador por fuera del escenario
  ==============================================*/
 
  if(datos.jugador_y > 500){
@@ -386,6 +430,45 @@ xhr_plataforma.onreadystatechange = function(){
 
  }
 }
+
+
+/**resetear monedas */
+if(datos.nivel == 1){
+
+	var xhr_monedas = new XMLHttpRequest();
+	xhr_monedas.open("GET", "views/js/json/monedasNivel1.json", true)
+
+}
+
+if(datos.nivel == 2){
+
+   var xhr_monedas = new XMLHttpRequest();
+   xhr_monedas.open("GET", "views/js/json/monedasNivel2.json", true)  
+
+}
+
+if(datos.nivel == 3){
+
+	 var xhr_monedas = new XMLHttpRequest();
+	 xhr_monedas.open("GET", "views/js/json/monedasNivel3.json", true)
+}
+
+xhr_monedas.send();
+xhr_monedas.onreadystatechange = function(){
+
+   if ((xhr_monedas.readyState == 4)&&(xhr_monedas.status == 200)){
+
+	   datos.posMonedas = JSON.parse(xhr_monedas.responseText)
+
+	   for(var i =0; i< datos.posMonedas.length; i++){
+		   datos.imgMonedas[i] = new Image();
+		   datos.imgMonedas[i].src="views/img/utileria/monedas.png";
+	   }
+
+   }
+}
+
+
 
 
 }
