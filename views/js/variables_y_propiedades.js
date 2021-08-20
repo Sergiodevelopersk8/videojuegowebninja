@@ -59,5 +59,8 @@ var datos={
     imgMonedas:[],
     posMonedas:[],
     imgTrampas:[],
-    posTrampas:[]
-}
+    posTrampas:[],
+    movTrampas:0,
+    cambioMovTrampas:false
+    
+  }

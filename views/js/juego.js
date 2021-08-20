@@ -72,6 +72,18 @@ for(var i =0; i<= datos.cicloSprite; i+=100){
   }
 }
 
+
+/**=============================================
+ Ciclo Trampas
+ ==============================================*/
+
+if(datos.movTrampas <= 0){datos.cambioMovTrampas = false;}
+
+if(datos.movTrampas >= 100){datos.cambioMovTrampas = true;}
+if(!datos.cambioMovTrampas){datos.movTrampas++;}
+else{datos.movTrampas--;}
+
+
 /**=============================================
   Movimiento horizontal
  ==============================================*/
@@ -408,7 +420,9 @@ if(colisionesTrampas()){
  datos.imgJugador.src = "views/img/jugador/colision_trampa.png";
 
 }
-
+else{
+  datos.imgTrampas[i].src="views/img/utileria/trampas.png";
+}
 
 }
 
