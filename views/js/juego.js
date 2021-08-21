@@ -394,11 +394,11 @@ setTimeout(function(){
   function colisionesTrampas(){
 
 /*No colisiones con monedas de arriba hacia abajo*/
-if((datos.jugador_y + datos.jugador_alto) <  datos.posTrampas[i].y){return false;}
+if((datos.jugador_y + datos.jugador_alto) <  datos.posTrampas[i].y + datos.movTrampas){return false;}
 
 /**No colisiones con monedas de abajo hacia arriba */
 
-if(datos.jugador_y > (datos.posTrampas[i].y + datos.posTrampas[i].alto)){return false;}
+if(datos.jugador_y > (datos.posTrampas[i].y + datos.movTrampas + datos.posTrampas[i].alto)){return false;}
 
 /**No colisiones con monedas de izquierda a derecha */
 

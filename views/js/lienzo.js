@@ -56,7 +56,7 @@ Trampas
 
 		 for(var i = 0; i < datos.posTrampas.length; i++){	
 
-			ctx.drawImage(datos.imgTrampas[i], datos.sprite_x, 0, 100, 100, datos.posTrampas[i].x+datos.movTrampas, datos.posTrampas[i].y,
+			ctx.drawImage(datos.imgTrampas[i], datos.sprite_x, 0, 100, 100, datos.posTrampas[i].x, datos.posTrampas[i].y + datos.movTrampas,
 				datos.posTrampas[i].ancho, datos.posTrampas[i].alto);
 		
 		}
