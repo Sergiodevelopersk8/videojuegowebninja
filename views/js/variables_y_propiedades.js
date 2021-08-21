@@ -61,6 +61,14 @@ var datos={
     imgTrampas:[],
     posTrampas:[],
     movTrampas:0,
-    cambioMovTrampas:false
+    cambioMovTrampas:false,
+    imgEnemigos: null,
+    posEnemigos: [],
+    imgBalasEnemigos:null,
+    posBalasEnemigos:[],
+    movBalasEnemigos:0,
+    velocidadBalasEnemigos:5,
+    cicloBalasEnemigos:0,
+    cambioBalasEnemigos:false
     
   }

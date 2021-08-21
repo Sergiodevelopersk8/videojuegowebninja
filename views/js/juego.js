@@ -129,6 +129,22 @@ for (var i=0; i< datos.plataforma.length; i++){
  }
 
 
+ /**=============================================
+  Movimiento horizontal enemigos
+ ==============================================*/
+
+ for( var i = 0; i < datos.posEnemigos.length; i++){
+  datos.posEnemigos[i].x += datos.movimiento;
+}
+
+/**=============================================
+  Movimiento horizontal enemigos
+ ==============================================*/
+
+ for( var i = 0; i < datos.posBalasEnemigos.length; i++){
+  datos.posBalasEnemigos[i].x += datos.movimiento;
+}
+
 
 /**=============================================
   Movimiento izquierda
@@ -428,10 +444,165 @@ else{
 
 
 
+/**=============================================
+Colisiones con enemigos
+ ==============================================*/
+
+ for(var i = 0; i < datos.posEnemigos.length; i++){
+
+  function colisionesEnemigos(){
+  /**no colision pltaforma de arriba hacia abajo */
+  
+  if((datos.jugador_y + datos.jugador_alto) < datos.posEnemigos[i].y){
+    return false;
+  }
+  
+  /**no colision pltaforma de abajo hacia arriba */
+  
+  if(datos.jugador_y  > ( datos.posEnemigos[i].y + datos.posEnemigos[i].alto)){
+    return false;
+  }
+  
+  /**no colision pltaforma de izquierda hacia derecha */
+  
+  if((datos.jugador_x + datos.jugador_ancho) <  datos.posEnemigos[i].x ){
+    return false;
+  }
+  
+  /**no colision pltaforma de derecha a izquierda */
+  
+  if(datos.jugador_x  > ( datos.posEnemigos[i].x + datos.posEnemigos[i].ancho)){
+    return false;
+  }
+  
+    return true;
+  }
+  
+  colisionesEnemigos();
+  
+  
+  /**colision pltaforma de arriba hacia abajo*/
+  
+  
+  if(colisionesEnemigos() && (datos.jugador_y + datos.jugador_alto) < datos.posEnemigos[i].y + datos.gravedad){
+  
+  datos.gravedad = 0;
+  datos.jugador_y = datos.posEnemigos[i].y - datos.jugador_alto;
+  
+  }
+  
+  
+  /**colision pltaforma de abajo hacia arriba*/
+  
+  
+  if(colisionesEnemigos() && datos.jugador_y - datos.gravedad > ( datos.posEnemigos[i].y + datos.posEnemigos[i].alto)){
+  
+    datos.gravedad = 1;
+    datos.jugador_y = datos.posEnemigos[i].y + datos.posEnemigos[i].alto;
+    
+    }
+  
+  if(datos.desplazamientoEscenario <= datos.limiteEscenario){
+  
+  /**colision pltaforma de izquierda a derecha*/
+  
+  if(colisionesEnemigos() && (datos.jugador_x + datos.jugador_ancho) < datos.posEnemigos[i].x + datos.movimientoJugador){
+  
+    datos.movimientoJugador = 0;
+    datos.jugador_x = datos.posEnemigos[i].x - datos.jugador_ancho;
+    
+    }
+    
+    
+      /**colision pltaforma de  derecha a izquierda*/
+    
+      if(colisionesEnemigos() && datos.jugador_x + datos.movimientoJugador > (datos.posEnemigos[i].x + datos.posEnemigos[i].ancho)){
+    
+        datos.movimientoJugador = 0;
+        datos.jugador_x = datos.posEnemigos[i].x + datos.posEnemigos[i].ancho;
+        
+        }
+        
+    
+  
+  
+  }
+  
+  else{
+  
+    
+    /**colision pltaforma de izquierda a derecha*/
+  
+  if(colisionesEnemigos() && (datos.jugador_x + datos.jugador_ancho) < datos.posEnemigos[i].x - datos.movimiento){
+  
+    datos.movimiento = 0;
+    datos.jugador_x = datos.posEnemigos[i].x - datos.jugador_ancho;
+    
+    }
+    
+    
+      /**colision pltaforma de  derecha a izquierda*/
+    
+      if(colisionesEnemigos() && datos.jugador_x + datos.movimiento > (datos.posEnemigos[i].x + datos.posEnemigos[i].ancho)){
+    
+        datos.movimiento = 0;
+        datos.jugador_x = datos.posEnemigos[i].x + datos.posEnemigos[i].ancho;
+        
+        }
+        
+    
+  
+  }
+  
+  /**=============================================
+    salto
+   ==============================================*/
+  
+  if(datos.salto && datos.gravedad == 0 && datos.jugador_y == datos.posEnemigos[i].y - datos.jugador_alto){
+    datos.gravedad = datos.alturaSalto;
+  }
+  
+   }
+  
+   /**=============================================
+  Ciclo balas enemigos
+   ==============================================*/
+
+if(datos.cicloBalasEnemigos >= 5000){
+  datos.cicloBalasEnemigos = 0;
+}
+else{
+  datos.cicloBalasEnemigos += 20;
+}
+
+for(var i=0; i<=datos.cicloBalasEnemigos; i+=1000){
+if(datos.cicloBalasEnemigos >= i){
+  datos.cambioBalasEnemigos = true;
+  datos.movBalasEnemigos = datos.velocidadBalasEnemigos;
+}
+if(datos.cicloBalasEnemigos >= i+900){
+  datos.cambioBalasEnemigos = false;
+  datos.movBalasEnemigos = 0;
+}
+
+}
 
 
+if(datos.cambioBalasEnemigos == true){
+ for(var i=0; i < datos.posBalasEnemigos.length; i++){
 
- 
+  datos.posBalasEnemigos[i].x -= datos.movBalasEnemigos;
+
+ }
+}
+else{
+  for(var i=0; i < datos.posBalasEnemigos.length; i++){
+
+    datos.posBalasEnemigos[i].x = datos.posEnemigos[i].x ;
+  
+   }
+
+}
 /**=============================================
   Caida del jugador por fuera del escenario
  ==============================================*/

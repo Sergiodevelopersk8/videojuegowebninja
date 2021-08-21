@@ -314,6 +314,41 @@ xhr_trampas.onreadystatechange = function(){
 Fin de las trampas
 =============================================*/
 
+/*=============================================
+		Enemigos
+		=============================================*/
+
+		datos.imgEnemigos = new Image();
+		datos.imgEnemigos.src = "views/img/utileria/enemigos.png";
+		datos.imgBalasEnemigos = new Image();
+		datos.imgBalasEnemigos.src = "views/img/utileria/balasEnemigos.png";	
+for(var i = 1; i <= 3; i++){
+	
+		if(nivel == i){
+
+			var xhr_enemigos = new XMLHttpRequest();
+			xhr_enemigos.open("GET", "views/js/json/enemigosNivel"+i+".json", true)
+
+		}
+	}
+
+		xhr_enemigos.send();
+
+		xhr_enemigos.onreadystatechange = function(){
+
+			if ((xhr_enemigos.readyState == 4)&&(xhr_enemigos.status == 200)){
+
+				// El método JSON.parse() analiza una cadena de texto como JSON, transformando opcionalmente el valor producido por el análisis.
+
+				datos.posEnemigos = JSON.parse(xhr_enemigos.responseText);
+				
+				datos.posBalasEnemigos = JSON.parse(xhr_enemigos.responseText);
+
+			}
+		}
+
+
+
 
 
 		/*=============================================

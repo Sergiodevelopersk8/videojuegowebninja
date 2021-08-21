@@ -88,6 +88,33 @@ monedas
 		
 		}
 
+		
+		/*=============================================
+Balas Enemigos
+ 		=============================================*/
+
+		 for(var i = 0; i < datos.posBalasEnemigos.length; i++){	
+
+			ctx.drawImage(datos.imgBalasEnemigos, datos.posBalasEnemigos[i].x, datos.posBalasEnemigos[i].y,
+				datos.posBalasEnemigos[i].ancho-20, datos.posBalasEnemigos[i].alto-20);
+		
+		}
+
+		/*=============================================
+Enemigos
+ 		=============================================*/
+
+		 for(var i = 0; i < datos.posEnemigos.length; i++){	
+
+			ctx.drawImage(datos.imgEnemigos, datos.posEnemigos[i].x, datos.posEnemigos[i].y,
+				datos.posEnemigos[i].ancho, datos.posEnemigos[i].alto);
+		
+		}
+
+
+
+
+
 		/*=============================================
 Jugador
  		=============================================*/
