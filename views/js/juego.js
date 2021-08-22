@@ -603,6 +603,64 @@ else{
    }
 
 }
+
+
+
+/**=============================================
+  Colisiones con balas enemigos
+ ==============================================*/
+ for(var i = 0; i< datos.posBalasEnemigos.length; i++){
+  function colisionesBalasEnemigos(){
+
+/*No colisiones con monedas de arriba hacia abajo*/
+if((datos.jugador_y + datos.jugador_alto) <  datos.posBalasEnemigos[i].y){return false;}
+
+/**No colisiones con monedas de abajo hacia arriba */
+
+if(datos.jugador_y > (datos.posBalasEnemigos[i].y  + datos.posBalasEnemigos[i].alto)){return false;}
+
+/**No colisiones con monedas de izquierda a derecha */
+
+if((datos.jugador_x + datos.jugador_ancho) < datos.posBalasEnemigos[i].x){return false;}
+
+/**No colisiones con monedas de derecha a izquierda */
+
+if(datos.jugador_x > (datos.posBalasEnemigos[i].x + datos.posBalasEnemigos[i].ancho)) {return false;}
+
+
+
+return true;
+
+  }
+  colisionesBalasEnemigos();
+
+if(colisionesBalasEnemigos()){
+  datos.imgJugador.src = "views/img/jugador/colision_trampa.png";
+  datos.imgBalasEnemigos.src="views/img/utileria/colisionesBalasEnemigos.png";
+ 
+ setTimeout(function(){
+
+  datos.imgJugador.src = "views/img/jugador/stop_right.png";
+  datos.imgBalasEnemigos.src="views/img/utileria/balasEnemigos.png";
+
+
+ }, 100)
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
 /**=============================================
   Caida del jugador por fuera del escenario
  ==============================================*/
@@ -733,6 +791,43 @@ xhr_trampas.onreadystatechange = function(){
 
    }
 }
+
+
+/*=============================================
+		resetear Enemigos
+		=============================================*/
+
+		datos.imgEnemigos = new Image();
+		datos.imgEnemigos.src = "views/img/utileria/enemigos.png";
+		datos.imgBalasEnemigos = new Image();
+		datos.imgBalasEnemigos.src = "views/img/utileria/balasEnemigos.png";	
+for(var i = 1; i <= 3; i++){
+	
+		if(datos.nivel == i){
+
+			var xhr_enemigos = new XMLHttpRequest();
+			xhr_enemigos.open("GET", "views/js/json/enemigosNivel"+i+".json", true)
+
+		}
+	}
+
+		xhr_enemigos.send();
+
+		xhr_enemigos.onreadystatechange = function(){
+
+			if ((xhr_enemigos.readyState == 4)&&(xhr_enemigos.status == 200)){
+
+				// El método JSON.parse() analiza una cadena de texto como JSON, transformando opcionalmente el valor producido por el análisis.
+
+				datos.posEnemigos = JSON.parse(xhr_enemigos.responseText);
+				
+				datos.posBalasEnemigos = JSON.parse(xhr_enemigos.responseText);
+
+			}
+		}
+
+
+
 
 
 
