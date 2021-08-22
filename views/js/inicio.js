@@ -372,7 +372,7 @@ for(var i = 1; i <= 3; i++){
 		PRELOAD
 		=============================================*/
 
-		var cargarArchivos = [datos.plano0, datos.texturaPlataforma, datos.detalles, datos.plano1, datos.plano2, datos.plano3];
+		var cargarArchivos = [datos.plano0, datos.texturaPlataforma, datos.detalles, datos.plano1, datos.plano2, datos.plano3, datos.imgJugador, datos.imgEnemigos, datos.imgBalasEnemigos];
 		var numeroArchivos = 0;
 		var porcentaje = 0;
 
