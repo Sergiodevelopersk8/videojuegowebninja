@@ -123,6 +123,15 @@ Jugador
  ctx.drawImage(datos.imgJugador, datos.sprite_x, 0, 100, 90, datos.jugador_x, datos.jugador_y, datos.jugador_ancho, datos.jugador_alto);
 
  
+	/*=============================================
+Disparo Jugador
+ 		=============================================*/
+
+
+		 ctx.drawImage(datos.imgDisparoJugador, datos.sprite_x, 0, 100, 100, datos.disparo_x, datos.disparo_y, datos.disparo_ancho, datos.disparo_alto);
+
+ 
+
 
 		/*=============================================
 		PLATAFORMAS

@@ -360,6 +360,15 @@ for(var i = 1; i <= 3; i++){
 	
 
 		/*=============================================
+		Disparo JUGADOR
+		=============================================*/
+
+		datos.imgDisparoJugador = new Image();
+		datos.imgDisparoJugador.src = "views/img/utileria/balasJugador.png";
+	
+
+
+		/*=============================================
 		PLANO 0
 		=============================================*/
 

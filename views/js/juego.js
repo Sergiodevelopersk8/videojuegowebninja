@@ -27,6 +27,7 @@ tecla.preventDefault();
 if(tecla.keyCode == 37){datos.izquierda = true;}
 if(tecla.keyCode == 39){datos.derecha = true;}
 if(tecla.keyCode == 38){datos.salto = true;}
+if(tecla.keyCode == 32){datos.disparo = true;}
 
 
 
@@ -43,6 +44,7 @@ soltar: function(tecla){
  if(tecla.keyCode == 39){datos.derecha = false; datos.imgJugador.src = "views/img/jugador/stop_right.png";} 
     if(tecla.keyCode == 38){datos.salto = false;}
 
+    if(tecla.keyCode == 32){datos.disparo = false;}
 
 },
 

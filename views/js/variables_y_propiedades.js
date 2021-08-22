@@ -69,6 +69,11 @@ var datos={
     movBalasEnemigos:0,
     velocidadBalasEnemigos:5,
     cicloBalasEnemigos:0,
-    cambioBalasEnemigos:false
-    
+    cambioBalasEnemigos:false,
+    disparo: false,
+    imgDisparoJugador:null,
+    disparo_x:0,
+    disparo_y:0,
+    disparo_ancho:15,
+    disparo_alto:15    
   }
