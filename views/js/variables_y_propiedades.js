@@ -75,5 +75,8 @@ var datos={
     disparo_x:0,
     disparo_y:0,
     disparo_ancho:15,
-    disparo_alto:15    
+    disparo_alto:15,
+    validarDisparo:false,
+    disparoDer:false,
+    disparoIzq:false   
   }

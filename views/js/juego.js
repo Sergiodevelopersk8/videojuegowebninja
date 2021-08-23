@@ -27,7 +27,7 @@ tecla.preventDefault();
 if(tecla.keyCode == 37){datos.izquierda = true;}
 if(tecla.keyCode == 39){datos.derecha = true;}
 if(tecla.keyCode == 38){datos.salto = true;}
-if(tecla.keyCode == 32){datos.disparo = true;}
+if(tecla.keyCode == 32){datos.disparo = true; datos.disparo_y = datos.jugador_y;}
 
 
 
@@ -656,7 +656,16 @@ if(colisionesBalasEnemigos()){
 
 
 
+/**=============================================
+  Disparo del jugador
+ ==============================================*/
 
+if(datos.disparo){
+
+
+
+
+}
 
 
 
