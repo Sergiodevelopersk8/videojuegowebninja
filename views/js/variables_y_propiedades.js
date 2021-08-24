@@ -78,5 +78,8 @@ var datos={
     disparo_alto:15,
     validarDisparo:false,
     disparoDer:false,
-    disparoIzq:false   
+    disparoIzq:false,
+    movDisparoJugador: 0,
+    velocidadDisparoJugador: 5,
+    direccionJugador:null   
   }

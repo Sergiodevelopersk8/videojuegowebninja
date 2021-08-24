@@ -27,7 +27,7 @@ tecla.preventDefault();
 if(tecla.keyCode == 37){datos.izquierda = true;}
 if(tecla.keyCode == 39){datos.derecha = true;}
 if(tecla.keyCode == 38){datos.salto = true;}
-if(tecla.keyCode == 32){datos.disparo = true; datos.disparo_y = datos.jugador_y;}
+if(tecla.keyCode == 32){datos.disparo = true; datos.disparo_y = datos.jugador_y; datos.movDisparoJugador=0;}
 
 
 
@@ -154,7 +154,8 @@ for (var i=0; i< datos.plataforma.length; i++){
 
 if(datos.izquierda)
 {
- // datos.imgJugador.src = "views/img/jugador/run_left.png";
+
+  datos.direccionJugador = "izquierda"
 
   if(datos.desplazamientoEscenario >=  0){
     datos.movimiento=0;
@@ -190,7 +191,8 @@ datos.movimiento = datos.velocidad;
 
  if(datos.derecha)
  {
-  //datos.imgJugador.src = "views/img/jugador/run_right.png";
+datos.direccionJugador = "derecha";
+
   if(datos.desplazamientoEscenario <= datos.limiteEscenario){
 
     datos.movimiento=0;
@@ -662,14 +664,37 @@ if(colisionesBalasEnemigos()){
 
 if(datos.disparo){
 
-
+datos.validarDisparo = true;
 
 
 }
 
+if(datos.validarDisparo == true)
+{
+  if(datos.direccionJugador == "izquierda"){
 
+    datos.disparoIzq = true;
+    datos.disparoDer = false;
+  }
+  else{
 
+datos.disparoIzq = false;
+datos.disparoDer = true;
 
+  }
+}
+
+if(datos.disparoIzq == true){
+  datos.validarDisparo = false;
+  datos.disparo_x = datos.jugador_x + datos.movDisparoJugador;
+  datos.movDisparoJugador -= datos.velocidadDisparoJugador;
+}
+
+if(datos.disparoDer == true){
+  datos.validarDisparo = false;
+  datos.disparo_x = datos.jugador_x + datos.movDisparoJugador;
+  datos.movDisparoJugador += datos.velocidadDisparoJugador;
+}
 
 
 /**=============================================
@@ -898,7 +923,7 @@ if(xhr.responseText =="ok"){
 
 /*
 
-brave://settings/?search=borrar
+brave://settings/clearBrowserData?search=borrar
 
 opera://settings/clearBrowserData
 
