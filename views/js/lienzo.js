@@ -127,12 +127,12 @@ Jugador
 Disparo Jugador
  		=============================================*/
 
-		 if(datos.disparoDer == true || datos.disparoIzq == true){
+	if(datos.disparoDer == true || datos.disparoIzq == true){
 
 		 ctx.drawImage(datos.imgDisparoJugador, datos.sprite_x, 0, 100, 100, datos.disparo_x, datos.disparo_y, datos.disparo_ancho, datos.disparo_alto);
 		 }
  
-
+		
 
 		/*=============================================
 		PLATAFORMAS

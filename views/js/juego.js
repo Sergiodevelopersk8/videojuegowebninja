@@ -28,11 +28,7 @@ if(tecla.keyCode == 37){datos.izquierda = true;}
 if(tecla.keyCode == 39){datos.derecha = true;}
 if(tecla.keyCode == 38){datos.salto = true;}
 if(tecla.keyCode == 32){datos.disparo = true; datos.disparo_y = datos.jugador_y; datos.movDisparoJugador=0;}
-
-
-
-
-    },
+},
 
 soltar: function(tecla){
 
@@ -662,6 +658,9 @@ if(colisionesBalasEnemigos()){
   Disparo del jugador
  ==============================================*/
 
+
+
+
 if(datos.disparo){
 
 datos.validarDisparo = true;
@@ -688,13 +687,33 @@ if(datos.disparoIzq == true){
   datos.validarDisparo = false;
   datos.disparo_x = datos.jugador_x + datos.movDisparoJugador;
   datos.movDisparoJugador -= datos.velocidadDisparoJugador;
+  if( datos.disparo_x <= -500){
+    datos.disparo_x = datos.jugador_x;
+  }
 }
 
 if(datos.disparoDer == true){
   datos.validarDisparo = false;
   datos.disparo_x = datos.jugador_x + datos.movDisparoJugador;
   datos.movDisparoJugador += datos.velocidadDisparoJugador;
+  if(datos.disparo_x > 500){
+    
+    datos.disparo_x = datos.jugador_x;
+   
+   	
+    
+   
+    }
 }
+
+
+
+/**=============================================
+  Colisiones balas enemigos con disparo jugador
+ ==============================================*/
+
+
+
 
 
 /**=============================================
