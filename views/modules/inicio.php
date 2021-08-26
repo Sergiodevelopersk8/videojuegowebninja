@@ -198,11 +198,22 @@ Monedas
     <p>Monedas</p>
     <span>0</span>
 <div id="spriteMoneda">
-    
-</div>
 
 </div>
 
+<div id="sonido">
+    <p>sonido</p>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+</div>
+<div id="salida">
+    <button>Salir</button>
+</div>
 </div>
 
 

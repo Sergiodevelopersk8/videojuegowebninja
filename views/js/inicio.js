@@ -381,7 +381,9 @@ for(var i = 1; i <= 3; i++){
 		PRELOAD
 		=============================================*/
 
-		var cargarArchivos = [datos.plano0, datos.texturaPlataforma, datos.detalles, datos.plano1, datos.plano2, datos.plano3, datos.imgJugador, datos.imgEnemigos, datos.imgBalasEnemigos];
+		var cargarArchivos = [datos.plano0, datos.texturaPlataforma, datos.detalles,
+			 datos.plano1, datos.plano2, datos.plano3, datos.imgJugador, datos.imgEnemigos, datos.imgBalasEnemigos,
+			datos. imgDisparoJugador];
 		var numeroArchivos = 0;
 		var porcentaje = 0;
 
@@ -403,6 +405,7 @@ for(var i = 1; i <= 3; i++){
 			if(numeroArchivos == cargarArchivos.length){
 
 				document.querySelector("#lienzo").style.display = "block";
+				document.querySelector("#tablero").style.display = "block";
 				
 				document.querySelector("#btnAmpliar").style.display = "block";
 

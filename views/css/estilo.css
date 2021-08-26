@@ -248,7 +248,7 @@ Tablero
 ===============*/
 
 #contenedor #tablero{
-
+display: none;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -360,7 +360,7 @@ Moneda
 
     position: absolute;
     top: 0px;
-    left: 590px;
+    left: 567px;
     width: 200px;
     height: 60px;
     color: white;
@@ -386,7 +386,7 @@ Moneda
    font-weight: bold;
 }
 
-#spriteMoneda{
+#contenedor #tablero #spriteMoneda{
 
     float: left;
     margin-top: -55px;
@@ -399,6 +399,91 @@ Moneda
 
 }
 
+
+/*
+==========================
+Volumen
+===============*/
+#contenedor #tablero #sonido{
+
+    position: absolute;
+    top: 0px;
+    right: -136px;
+    width: 150px;
+    height: 60px;
+    color: white;
+    font-size: 20px;
+    
+
+}
+
+#contenedor #tablero #sonido p{
+
+float: left;
+line-height: 60px;
+padding-left: 5px;
+width: 50px;
+font-weight: bold;
+}
+
+#contenedor #tablero #sonido ul{
+
+float: left;
+width: 65px;
+height: 70px;
+margin-left: 30px;
+}
+
+
+#contenedor #tablero #sonido ul li{
+
+    float: left;
+    width: 8px;
+    height: 20px;
+    background: white;
+    margin: 19px 3px;
+    cursor: pointer;
+}
+
+#contenedor #tablero #sonido ul li:first-child{
+height: 7px;
+margin-top: 32px;
+}
+
+
+#contenedor #tablero #sonido ul li:nth-child(2){
+    height: 14px;
+    margin-top: 25px;
+    }
+    
+/*
+==========================
+Salida
+===============*/
+#contenedor #tablero #salida{
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 80px;
+    height: 60px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+#contenedor #tablero #salida button{
+    width:50px;
+    font-weight: bold;
+    border:0;
+    margin-top: 15px;
+    padding:5px;
+    background: black;
+    color: white;
+    font-family: 'Patrick Hand', cursive;
+    cursor: pointer;
+    border-radius: 2px;
+}
 
 
 
