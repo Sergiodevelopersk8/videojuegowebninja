@@ -143,11 +143,68 @@ else
 
 </div>
 
+<!----Canvas------->
 
 <canvas id="lienzo" width="1000px" height="500px"></canvas>
 
 
 <div id="btnAmpliar" onclick="ampliar();">Ampliar juego</div>
+
+
+<!--========================================
+TABLERO
+============================================-->
+
+<div id="tablero">
+<!--========================================
+Vidas
+============================================-->
+
+<div id="vidas">
+<p>Vidas:</p>
+
+<ul>
+<li>
+<img src="views/img/utileria/vidas.png">
+</li>
+<li>
+
+<img src="views/img/utileria/vidas.png">
+</li>
+<li>
+
+<img src="views/img/utileria/vidas.png">
+</li>
+
+</ul>
+
+</div>
+
+<!--========================================
+Energia
+============================================-->
+<div id="energia">
+
+<p>ENERGÍA: </p>
+<meter id="medidaEnergia" value="100" min="0" max="100" high="40"></meter>
+<span>100%</span>
+</div>
+
+<!--========================================
+Monedas
+============================================-->
+
+<div id="monedas">
+    <p>Monedas</p>
+    <span>0</span>
+<div id="spriteMoneda">
+    
+</div>
+
+</div>
+
+</div>
+
 
  <!----preload------->
 

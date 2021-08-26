@@ -243,8 +243,166 @@ Canvas
     display:none;
 }
 
+/*==========================
+Tablero
+===============*/
 
-/**
+#contenedor #tablero{
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1000px;
+    height: 60px;
+    background:rgba(0, 0, 0, .5);
+    font-family: 'Patrick Hand', cursive;
+
+}
+
+/*==========================
+Vidas
+===============*/
+#contenedor #tablero #vidas{
+    top:0;
+    left: 0;
+    width: 220px;
+    height: 60px;
+    color:white;
+    font-size: 20px;
+    
+}
+
+
+#contenedor #tablero #vidas p{
+   
+   float: left;
+    line-height: 60px;
+    padding-left: 10px;
+    width:50px;
+font-weight: bold;
+}
+
+
+#contenedor #tablero #vidas ul{
+
+    float: left;
+    width: 140px;
+    height: 70px;
+    margin-left: 10px;
+}
+
+#contenedor #tablero #vidas ul li{
+
+margin:8px 2px;
+float: left;
+width: 40px;
+height: 40px;
+border-radius: 100%;
+line-height: 40px;
+background: rgba(255, 255, 255, .5);
+text-align: center;
+}
+   
+
+#contenedor #tablero #vidas ul li img{
+    padding-top: 7px;
+    width: 60%;
+}
+
+
+
+/*
+==========================
+Energia
+===============*/
+#contenedor #tablero #energia{
+    position: absolute;
+    top:0px;
+    left: 220px;
+    width: 340px;
+    height: 60px;
+    color:white;
+    font-size: 20px;
+    
+}
+
+
+#contenedor #tablero #energia p{
+
+float: left;
+line-height: 60px;
+padding-left: 10px;
+width: 50px;
+font-weight: bold;
+font-size: 15px;
+}
+
+#contenedor #tablero #energia meter{
+
+float: left;
+width: 200px;
+margin-top: 20px;
+margin-left: 30px;
+}
+
+#contenedor #tablero #energia span{
+
+float: left;
+
+}
+
+
+/*
+==========================
+Moneda
+===============*/
+#contenedor #tablero #monedas{
+
+    position: absolute;
+    top: 0px;
+    left: 590px;
+    width: 200px;
+    height: 60px;
+    color: white;
+    font-size: 20px;
+
+}
+
+#contenedor #tablero #monedas p{
+
+    float: left;
+    line-height: 60px;
+    padding-left: 20px;
+    width: 50px;
+    font-weight: bold;
+}
+
+#contenedor #tablero #monedas span{
+
+   float: left;
+   line-height: 60px;
+   padding-left: 39px;
+   width: 50px;
+   font-weight: bold;
+}
+
+#spriteMoneda{
+
+    float: left;
+    margin-top: -55px;
+    margin-left: 127px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/utileria/monedas.png);
+    background-position: 0px;
+    background-size: cover;
+
+}
+
+
+
+
+/*
 ==========================
 preload
 ===============*/
