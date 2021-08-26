@@ -27,7 +27,11 @@ tecla.preventDefault();
 if(tecla.keyCode == 37){datos.izquierda = true;}
 if(tecla.keyCode == 39){datos.derecha = true;}
 if(tecla.keyCode == 38){datos.salto = true;}
-if(tecla.keyCode == 32){datos.disparo = true; datos.disparo_y = datos.jugador_y; datos.movDisparoJugador=0;}
+if(tecla.keyCode == 32){datos.disparo = true; datos.disparo_y = datos.jugador_y; datos.movDisparoJugador=0;
+
+  datos.imgDisparoJugador.src="views/img/utileria/balasJugador.png";
+  datos.disparo_ancho = 15;
+  datos.disparo_alto = 15;}
 },
 
 soltar: function(tecla){
@@ -687,23 +691,14 @@ if(datos.disparoIzq == true){
   datos.validarDisparo = false;
   datos.disparo_x = datos.jugador_x + datos.movDisparoJugador;
   datos.movDisparoJugador -= datos.velocidadDisparoJugador;
-  if( datos.disparo_x <= -500){
-    datos.disparo_x = datos.jugador_x;
-  }
+  if( datos.disparo_x <= -250 || coljuga()){    datos.disparo_y = -500 ;}
 }
 
 if(datos.disparoDer == true){
   datos.validarDisparo = false;
   datos.disparo_x = datos.jugador_x + datos.movDisparoJugador;
   datos.movDisparoJugador += datos.velocidadDisparoJugador;
-  if(datos.disparo_x > 500){
-    
-    datos.disparo_x = datos.jugador_x;
-   
-   	
-    
-   
-    }
+  if(datos.disparo_x > 500 || coljuga() ){  datos.disparo_y = -500;}
 }
 
 
@@ -711,8 +706,52 @@ if(datos.disparoDer == true){
 /**=============================================
   Colisiones balas enemigos con disparo jugador
  ==============================================*/
+ function coljuga(){
+ for(var i = 0; i< datos.posBalasEnemigos.length; i++){
+  function colisionesDisparoJugador(){
+
+/*No colisiones con monedas de arriba hacia abajo*/
+if((datos.disparo_y + datos.disparo_alto) <  datos.posBalasEnemigos[i].y){return false;}
+
+/**No colisiones con monedas de abajo hacia arriba */
+
+if(datos.disparo_y > (datos.posBalasEnemigos[i].y  + datos.posBalasEnemigos[i].alto)){return false;}
+
+/**No colisiones con monedas de izquierda a derecha */
+
+if((datos.disparo_x + datos.disparo_ancho) < datos.posBalasEnemigos[i].x){return false;}
+
+/**No colisiones con monedas de derecha a izquierda */
+
+if(datos.disparo_x > (datos.posBalasEnemigos[i].x + datos.posBalasEnemigos[i].ancho)) {return false;}
 
 
+
+return true;
+
+  }
+  colisionesDisparoJugador();
+
+if(colisionesDisparoJugador()){
+ datos.imgDisparoJugador.src="views/img/utileria/colisionesBalas.png";
+
+ datos.posBalasEnemigos[i].x=-500;
+ datos.posBalasEnemigos[i].y=-500;
+ datos.disparo_ancho = 50;
+ datos.disparo_alto = 50;
+
+ setTimeout(function(){
+
+ datos.disparo_y = -500;
+
+ }, 100)
+
+
+}
+
+
+}
+}
 
 
 
