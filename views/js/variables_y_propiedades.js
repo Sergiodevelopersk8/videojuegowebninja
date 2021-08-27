@@ -87,5 +87,6 @@ var datos={
     monedaColisionada:0,
     posicionMonedaColisionadaX:0,
     posicionMonedaColisionadaY:0,
-    energia:100  
+    energia:100,
+    vidas:3  
   }

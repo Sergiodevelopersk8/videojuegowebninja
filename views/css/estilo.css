@@ -485,7 +485,22 @@ Salida
     border-radius: 2px;
 }
 
-
+/*
+==========================
+Game over
+===============*/
+#contenedor #gameover{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1000px;
+    height: 500px;
+    z-index: 1;
+    background: rgba(0, 0, 0, 1);
+    font-family: 'Patrick Hand', cursive;
+    color: white;
+}
 
 /*
 ==========================

@@ -801,8 +801,43 @@ datos.jugador_y = 200;
 datos.jugador_x = 70;
 
 
+/**===================================
+Resetear contador de monedas
+ ====================================*/
+
+datos.contadorMonedas = 0;
+document.querySelector('#monedas span').innerHTML = datos.contadorMonedas;
+
+/**===================================
+Resetear energia
+ ====================================*/
+datos.energia=100;
+document.querySelector('#energia meter').value = datos.energia;
+document.querySelector('#monedas span').innerHTML = datos.energia + "%";
+
 /**Reinicio de plataformas */
 
+
+/**===================================
+Perdiendo vidas
+ ====================================*/
+datos.vidas = datos.vidas - 1;
+
+if(datos.vidas == 2){
+  document.querySelector('#vidas ul li:nth-child(3)').innerHTML="X";
+}
+if(datos.vidas == 1){
+  document.querySelector('#vidas ul li:nth-child(2)').innerHTML="X";
+}
+if(datos.vidas == 0){
+  document.querySelector('#vidas ul li:nth-child(1)').innerHTML="X";
+  document.querySelector('#gameover').style.display="block";
+  cancelAnimationFrame(animacion);
+  setTimeout(function(){
+    window.location.reload();
+
+  }, 5000);
+  }
 
 if(datos.nivel == 1){
 

@@ -2,6 +2,7 @@ var contenedor = document.querySelector("#contenedor");
 var ampliarLienzo = document.querySelector("#lienzo");
 var btnAmpliar = document.querySelector("#btnAmpliar");
 var ampliartablero = document.querySelector("#tablero");
+var ampligameover = document.querySelector("#gameover");
 
 function ampliar(){
 contenedor.style.width = "100%";
@@ -10,6 +11,8 @@ contenedor.style.margin = "0";
 tablero.style.width = "100%";
 ampliarLienzo.style.width = "100%";
 ampliarLienzo.style.height = "100vh";
+ampligameover.style.width = "100%";
+ampligameover.style.height = "100vh";
 
 btnAmpliar.innerHTML = "REDUCIR JUEGO";
 btnAmpliar.style.position = "fixed";
