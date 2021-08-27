@@ -392,13 +392,16 @@ return true;
   colisionesMonedas();
 
 if(colisionesMonedas()){
-  datos.imgMonedas[i].src="views/img/utileria/colisionesMonedas.png";
-  datos.posMonedas[i].y--;
-  var monedasColisionadas = i;
-setTimeout(function(){
-  datos.posMonedas[monedasColisionadas].x = -500;
-  datos.posMonedas[monedasColisionadas].y = -500;
-}, 500)
+  datos.activarMonedaColisionada = true;
+ datos.monedaColisionada = i;
+ datos.posicionMonedaColisionadaX = datos.posMonedas[i].x;
+ datos.posicionMonedaColisionadaY = datos.posMonedas[i].y;
+  datos.posMonedas[i].x = -500;
+  datos.posMonedas[i].y = -500;
+  datos.contadorMonedas += 10;
+  document.querySelector('#monedas span').innerHTML = datos.contadorMonedas;
+
+
 
 }
 
@@ -436,8 +439,17 @@ return true;
   colisionesTrampas();
 
 if(colisionesTrampas()){
+
   datos.imgTrampas[i].src="views/img/utileria/colisionesTrampas.png";
  datos.imgJugador.src = "views/img/jugador/colision_trampa.png";
+datos.energia--;
+document.querySelector("#energia meter").value = datos.energia;
+document.querySelector("#energia span").innerHTML = datos.energia + "%"; 
+
+if(datos.energia <= 0){
+  datos.reset = true;
+}
+
 
 }
 else{
@@ -639,6 +651,16 @@ return true;
   colisionesBalasEnemigos();
 
 if(colisionesBalasEnemigos()){
+
+  datos.energia--;
+document.querySelector("#energia meter").value = datos.energia;
+document.querySelector("#energia span").innerHTML = datos.energia + "%"; 
+
+if(datos.energia <= 0){
+  datos.reset = true;
+}
+
+
   datos.imgJugador.src = "views/img/jugador/colision_trampa.png";
   datos.imgBalasEnemigos.src="views/img/utileria/colisionesBalasEnemigos.png";
  

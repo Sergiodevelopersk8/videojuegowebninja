@@ -86,6 +86,17 @@ monedas
 			ctx.drawImage(datos.imgMonedas[i], datos.sprite_x, 0, 100, 100, datos.posMonedas[i].x, datos.posMonedas[i].y,
 				datos.posMonedas[i].ancho, datos.posMonedas[i].alto);
 		
+if(datos.activarMonedaColisionada == true){
+	
+	datos.imgMonedas[datos.monedaColisionada].src="views/img/utileria/colisionesMonedas.png";
+	ctx.drawImage(datos.imgMonedas[datos.monedaColisionada], datos.sprite_x, 0, 100, 100,datos.posicionMonedaColisionadaX, datos.posicionMonedaColisionadaY,
+		datos.posMonedas[i].ancho, datos.posMonedas[i].alto);
+		setTimeout(function(){
+			datos.activarMonedaColisionada = false;
+		}, 200)
+
+}
+
 		}
 
 		

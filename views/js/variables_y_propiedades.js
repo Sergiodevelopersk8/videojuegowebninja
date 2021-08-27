@@ -81,5 +81,11 @@ var datos={
     disparoIzq:false,
     movDisparoJugador: 0,
     velocidadDisparoJugador: 5,
-    direccionJugador:null   
+    direccionJugador:null,
+    contadorMonedas:0 ,
+    activarMonedaColisionada:false,
+    monedaColisionada:0,
+    posicionMonedaColisionadaX:0,
+    posicionMonedaColisionadaY:0,
+    energia:100  
   }
