@@ -212,7 +212,7 @@ Monedas
 
 </div>
 <div id="salida">
-    <button>Salir</button>
+    <button onclick="juego.salirDelJuego();">Salir</button>
 </div>
 </div>
 
@@ -237,3 +237,26 @@ Vidas
  </div>
 
  </div>
+
+
+
+ 
+<!--========================================
+Vidas
+============================================-->
+
+<audio src="views/mp3/background01.mp3" id="sBackground01" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/background02.mp3" id="sBackground02" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/background03.mp3" id="sBackground03" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/colisionBalasEnemigo.mp3" id="sColisionBalasEnemigo" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/colisionTrampas-Enemigos.mp3" id="sColisionTrampas-Enemigos" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/energia.mp3" id="sEnergia" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/disparoEnemigo.mp3" id="sDisparoEnemigo" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/disparoJugador.mp3" id="sDisparoJugador" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/monedas.mp3" id="sMonedas" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/saltoJugador.mp3" id="sSaltoJugador" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/perder.mp3" id="sPerder" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/perderVida.mp3" id="sPerderVida" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/ganar.mp3" id="sGanar" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/monedero.mp3" id="sMonedero" type="audio/mpeg" muted></audio>
+<audio src="views/mp3/puntos.mp3" id="sPuntos" type="audio/mpeg" muted></audio>

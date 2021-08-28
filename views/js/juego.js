@@ -26,12 +26,13 @@ tecla.preventDefault();
 
 if(tecla.keyCode == 37){datos.izquierda = true;}
 if(tecla.keyCode == 39){datos.derecha = true;}
-if(tecla.keyCode == 38){datos.salto = true;}
+if(tecla.keyCode == 38){datos.salto = true; datos.sSaltoJugador.play();}
 if(tecla.keyCode == 32){datos.disparo = true; datos.disparo_y = datos.jugador_y; datos.movDisparoJugador=0;
 
   datos.imgDisparoJugador.src="views/img/utileria/balasJugador.png";
   datos.disparo_ancho = 15;
-  datos.disparo_alto = 15;}
+  datos.disparo_alto = 15; 
+datos.sDisparoJugador.play();}
 },
 
 soltar: function(tecla){
@@ -49,6 +50,15 @@ soltar: function(tecla){
 },
 
 tiempo: function(){
+
+
+/**=============================================
+  Sonidos del nivel
+ ==============================================*/
+
+if(datos.nivel ==1){datos.sBackground01.play(); datos.sBackground01.loop = true;}
+if(datos.nivel ==2){datos.sBackground02.play(); datos.sBackground02.loop = true;}
+if(datos.nivel ==3){datos.sBackground03.play(); datos.sBackground3.loop = true;}
 
 /**=============================================
   canvas
@@ -359,6 +369,7 @@ if(colisionesPlataforma() && (datos.jugador_x + datos.jugador_ancho) < datos.pla
 
 if(datos.salto && datos.gravedad == 0 && datos.jugador_y == datos.plataforma[i].y - datos.jugador_alto){
   datos.gravedad = datos.alturaSalto;
+  
 }
 
  }
@@ -392,6 +403,7 @@ return true;
   colisionesMonedas();
 
 if(colisionesMonedas()){
+  datos.sMonedas.play();
   datos.activarMonedaColisionada = true;
  datos.monedaColisionada = i;
  datos.posicionMonedaColisionadaX = datos.posMonedas[i].x;
@@ -813,7 +825,8 @@ Resetear energia
  ====================================*/
 datos.energia=100;
 document.querySelector('#energia meter').value = datos.energia;
-document.querySelector('#monedas span').innerHTML = datos.energia + "%";
+//document.querySelector('#monedas span').innerHTML = datos.energia + "%";
+document.querySelector('#energia span').innerHTML = datos.energia + "%";
 
 /**Reinicio de plataformas */
 
@@ -1030,8 +1043,13 @@ if(xhr.responseText =="ok"){
 
 
 
-}
+},
 
+salirDelJuego: function(){
+
+  window.location.reload();
+
+}
 
 
 }

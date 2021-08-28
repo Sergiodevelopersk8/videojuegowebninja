@@ -44,9 +44,49 @@ var inicio = {
 
 		datos.nivel = event.getAttribute("nivel");
 		datos.id = event.getAttribute("id");
-		if(screenfull.enabled){
+		/*if(screenfull.enabled){
 			screenfull.request(document.querySelector("#contenedor"));
-		}
+		}*/
+
+/*=============================================
+	Sonidos
+	=============================================*/
+
+	datos.sBackground01=document.querySelector("#sBackground01");	
+	datos.sBackground02=document.querySelector("#sBackground02");
+	datos.sBackground03=document.querySelector("#sBackground03");
+	datos.sColisionBalasEnemigo=document.querySelector("#sColisionBalasEnemigo");
+	datos.sColisionTrampasEnemigos=document.querySelector("#sColisionTrampas-Enemigos");
+	datos.sDisparoEnemigo=document.querySelector("#sDisparoEnemigo");
+	datos.sDisparoJugador=document.querySelector("#sDisparoJugador");
+	datos.sEnergia=document.querySelector("#sEnergia");
+	datos.sMonedas=document.querySelector("#sMonedas");
+	datos.sSaltoJugador=document.querySelector("#sSaltoJugador");
+	datos.sPerderVida=document.querySelector("#sPerderVida");
+	datos.sPerder=document.querySelector("#sPerder");
+	datos.sGanar=document.querySelector("#sGanar");
+	datos.sMonedero=document.querySelector("#sMonedero");
+	datos.sPuntos=document.querySelector("#sPuntos");
+
+	datos.listaSonidos = document.querySelectorAll("audio");
+
+for(var i = 0; i< datos.listaSonidos.length; i++){
+
+	
+datos.listaSonidos[i].play();
+
+setTimeout(function(){
+	for(var i = 0; i< datos.listaSonidos.length; i++){
+datos.listaSonidos[i].pause();
+datos.listaSonidos[i].muted = false;
+	}
+},100)
+
+
+}
+
+
+
 		inicio.inicioNiveles(datos.nivel);
 
 	},

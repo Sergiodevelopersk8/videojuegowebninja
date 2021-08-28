@@ -88,5 +88,21 @@ var datos={
     posicionMonedaColisionadaX:0,
     posicionMonedaColisionadaY:0,
     energia:100,
-    vidas:3  
+    vidas:3,
+    sBackground01:null,
+	sBackground02:null,
+    sBackground03:null,
+    sColisionBalasEnemigo:null,
+    sColisionTrampasEnemigos:null,
+    sEnergia:null,
+    sDisparoEnemigo:null,
+    sDisparoJugador:null,
+    sMonedas:null,
+    sSaltoJugador:null,
+    sPerder:null,
+    sPerderVida:null,
+    sGanar:null,
+    sMonedero:null,
+    sPuntos:null,
+    listaSonidos:[]
   }
