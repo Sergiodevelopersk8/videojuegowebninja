@@ -451,7 +451,8 @@ return true;
   colisionesTrampas();
 
 if(colisionesTrampas()){
-
+datos.sColisionTrampasEnemigos.play();
+datos.sEnergia.play();
   datos.imgTrampas[i].src="views/img/utileria/colisionesTrampas.png";
  datos.imgJugador.src = "views/img/jugador/colision_trampa.png";
 datos.energia--;
@@ -663,7 +664,8 @@ return true;
   colisionesBalasEnemigos();
 
 if(colisionesBalasEnemigos()){
-
+  datos.sColisionTrampasEnemigos.play();
+  datos.sEnergia.play();
   datos.energia--;
 document.querySelector("#energia meter").value = datos.energia;
 document.querySelector("#energia span").innerHTML = datos.energia + "%"; 
@@ -767,6 +769,7 @@ return true;
   colisionesDisparoJugador();
 
 if(colisionesDisparoJugador()){
+  datos.sColisionBalasEnemigo.play();
  datos.imgDisparoJugador.src="views/img/utileria/colisionesBalas.png";
 
  datos.posBalasEnemigos[i].x=-500;
@@ -794,6 +797,7 @@ if(colisionesDisparoJugador()){
  ==============================================*/
 
  if(datos.jugador_y > 500){
+   datos.sPerder.play();
    datos.reset = true;
 
  }
@@ -804,7 +808,7 @@ if(colisionesDisparoJugador()){
  ==============================================*/
 
 if(datos.reset == true){
-
+datos.sPerderVida.play();
 datos.reset = false;
 datos.gravedad = 0;
 datos.desplazamientoEscenario = 0;
@@ -843,6 +847,11 @@ if(datos.vidas == 1){
   document.querySelector('#vidas ul li:nth-child(2)').innerHTML="X";
 }
 if(datos.vidas == 0){
+  if(datos.nivel == 1){datos.sBackground01.volume = 0;}
+  if(datos.nivel == 2){datos.sBackground02.volume = 0;}
+  if(datos.nivel == 3){datos.sBackground03.volume = 0;}
+  datos.sColisionTrampasEnemigos.volume = 0;
+  datos.sPerder.play();
   document.querySelector('#vidas ul li:nth-child(1)').innerHTML="X";
   document.querySelector('#gameover').style.display="block";
   cancelAnimationFrame(animacion);
