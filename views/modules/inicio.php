@@ -224,6 +224,59 @@ Vidas
     <h1>GAME OVER</h1>
 </div>
 
+
+<!--=====================================
+FINAL
+======================================-->
+
+<div id="final">
+	
+	<center>
+		
+		<div>
+			<img src="views/img/intro/F-compartir.jpg" width="150px">
+		</div>
+
+	</center>
+
+	<h1>¡LO LOGRASTE!<br>
+	<span id="puntajeFinal">0</span> pts
+	</h1>
+
+	<ul>
+		<li>
+			<h3>MONEDAS</h3>
+			<div id="spriteMonedaFinal"></div>
+			<h4 id="finalMonedas">		
+				<span>100</span> pts
+			</h4>
+		</li>
+
+		<li>
+			<h3>ENERGÍA</h3>
+			<meter id="medidaEnergiaFinal" value="100" min="0" max="100" high="40" style="margin-top:40px"></meter>
+			<span id="totalEnergia">100%</span>
+			<h4 style="margin-top:20px" id="puntosEnergia">
+				<span>100</span> pts
+			</h4>
+		</li>
+
+		<li>
+			<h3>VIDAS</h3>
+				<ol>
+					<li><img src="views/img/utileria/vidas.png"></li>
+					<li><img src="views/img/utileria/vidas.png"></li>
+					<li><img src="views/img/utileria/vidas.png"></li>
+				</ol>
+			<h4 id="finalVidas"><span>100</span> pts</h4>
+		</li>
+	</ul>
+	
+</div>
+
+
+
+
  <!----preload------->
 
  <div id="carga">

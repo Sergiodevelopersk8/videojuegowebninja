@@ -89,6 +89,8 @@ var datos={
     posicionMonedaColisionadaY:0,
     energia:100,
     vidas:3,
+    puntaje:0,
+    incrementoPuntaje:0,
     sBackground01:null,
 	sBackground02:null,
     sBackground03:null,

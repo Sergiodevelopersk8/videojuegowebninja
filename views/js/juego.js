@@ -1024,9 +1024,37 @@ for(var i = 1; i <= 3; i++){
  {
 
 cancelAnimationFrame(animacion);
-var xhr = new XMLHttpRequest();
+document.querySelector('#final').style.display="block";
+datos.sGanar.play();
+if(datos.nivel==1){datos.sBackground01.pause();}
+if(datos.nivel==2){datos.sBackground02.pause();}
+if(datos.nivel==3){datos.sBackground03.pause();}
+document.querySelector("#finalMonedas span").innerHTML = datos.contadorMonedas;
+document.querySelector("#medidaEnergiaFinal").value = datos.energia;
+document.querySelector("#totalEnergia ").innerHTML = datos.energia + "%";
+var puntosEnergia = 100 - datos.energia;
+document.querySelector("#puntosEnergia span").innerHTML = "-"+puntosEnergia;
+var puntosVidas = 0;
+if(datos.vidas == 3){puntosVidas = 0;}
+if(datos.vidas == 2){puntosVidas = 10;document.querySelector("#final ol li:nth-child(3)").innerHTML = "X";}
+if(datos.vidas == 1){puntosVidas = 20;
+ document.querySelector("#final ol li:nth-child(2)").innerHTML = "X";
+document.querySelector("#final ol li:nth-child(3)").innerHTML = "X";}
+document.querySelector("#finalVidas span").innerHTML = "-" +puntosVidas;
+datos.puntaje = datos.contadorMonedas - ( puntosEnergia + puntosVidas);
+datos.incrementoPuntaje = 0;
+var intervalo = setInterval(function(){
+  if(datos.incrementoPuntaje > datos.puntaje){
+datos.incrementoPuntaje = datos.puntaje;
+document.querySelector("#puntajeFinal").innerHTML = datos.puntaje;
+datos.sPuntos.play();
+datos.sMonedero.pause();
+clearInterval(intervalo);
+setTimeout(function(){
+
+  var xhr = new XMLHttpRequest();
 var nivel = "ok";
-var puntaje = "200";
+var puntaje = datos.puntaje;
 var numeroNivel = datos.nivel;
 var id = datos.id;
 var url="views/ajax/usuarios.php";
@@ -1046,6 +1074,16 @@ if(xhr.responseText =="ok"){
 
   }
 }
+
+},5000)
+  }
+  else{
+datos.incrementoPuntaje++;
+datos.sMonedero.play();
+document.querySelector("#puntajeFinal").innerHTML = datos.incrementoPuntaje;
+  }
+}, 16)
+
 
 
  }
