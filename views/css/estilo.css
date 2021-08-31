@@ -360,7 +360,7 @@ Moneda
 
     position: absolute;
     top: 0px;
-    left: 567px;
+    left: 561px;
     width: 200px;
     height: 60px;
     color: white;
@@ -390,7 +390,7 @@ Moneda
 
     float: left;
     margin-top: -55px;
-    margin-left: 127px;
+    margin-left: 144px;
     width: 50px;
     height: 50px;
     background-image: url(../img/utileria/monedas.png);
@@ -408,7 +408,7 @@ Volumen
 
     position: absolute;
     top: 0px;
-    right: -136px;
+    right: -142px;
     width: 150px;
     height: 60px;
     color: white;
