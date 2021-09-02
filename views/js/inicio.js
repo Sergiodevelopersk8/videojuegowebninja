@@ -41,7 +41,7 @@ var inicio = {
 	=============================================*/
 
 	elegirNivel: function(event){
-
+ampliar();
 		datos.nivel = event.getAttribute("nivel");
 		datos.id = event.getAttribute("id");
 		/*if(screenfull.enabled){

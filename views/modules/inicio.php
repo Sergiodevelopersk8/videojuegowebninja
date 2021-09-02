@@ -204,9 +204,9 @@ Monedas
 <div id="sonido">
     <p>sonido</p>
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li onclick="juego.bajarVolumen(this)" volumen="0"></li>
+        <li onclick="juego.bajarVolumen(this)" volumen="0.3"></li>
+        <li onclick="juego.bajarVolumen(this)" volumen="1"></li>
     </ul>
 </div>
 

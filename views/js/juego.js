@@ -6,7 +6,40 @@
 
 
 var juego ={
+
+  
+bajarVolumen:function(event){
+
+/*==================================
+CONTROL DE SONIDO
+====================================*/
+
+  var volumen = event.getAttribute("volumen");
+  var botonesSonidos = document.querySelectorAll("#sonido ul li");
+  for (var i =0; i < datos.listaSonidos.length; i++){
+    datos.listaSonidos[i].volume = volumen;
+  }
+
+  if(volumen == 0){
+    for(var i =0; i<botonesSonidos.length; i++){
+      botonesSonidos[i].style.opacity = .5;
+    }
+  }
+  else if(volumen == 0.3){
+    botonesSonidos[0].style.opacity = 1;
+    botonesSonidos[1].style.opacity = 1;
+    botonesSonidos[2].style.opacity = .5;
+  }
+  else {
+    for(var i= 0; i<botonesSonidos.length; i++){
+      botonesSonidos[i].style.opacity = 1;
+    }
+  }
+
+},
+
     teclado: function(){
+
 /****
  * eventos del teclado
  */
