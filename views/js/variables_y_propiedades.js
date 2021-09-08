@@ -106,5 +106,24 @@ var datos={
     sGanar:null,
     sMonedero:null,
     sPuntos:null,
-    listaSonidos:[]
+    listaSonidos:[],
+    /**================
+     * precarga
+     ==================*/
+
+     colision_trampa:null,
+     jump_left:null,
+     jump_right:null,
+     run_left:null,
+     run_right:null,
+     stop_left:null,
+     stop_right:null,
+     colisionesBalas:null,
+     colisionesBalasEnemigos:null,
+     colisionesMonedas:null,
+     colisionesTrampas:null,
+     monedas:null,
+     trampas:null
+
+
   }

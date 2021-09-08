@@ -105,8 +105,47 @@ datos.listaSonidos[i].muted = false;
 		document.querySelector("#carga").style.display = "block";
 
 		/*=============================================
+		Carga de Imagenes
+		=============================================*/
+
+
+
+		datos.colision_trampa= new Image();
+		datos.jump_left= new Image();
+		datos.jump_right= new Image();
+		datos.run_left= new Image();
+		datos.run_right= new Image();
+		datos.stop_left= new Image();
+		datos.stop_right= new Image();
+		datos.colisionesBalas= new Image();
+		datos.colisionesBalasEnemigos= new Image();
+		datos.colisionesMonedas= new Image();
+		datos.colisionesTrampas= new Image();
+		datos.monedas= new Image();
+		datos.trampas = new Image();
+   
+
+		datos.colision_trampa.src="views/img/jugador/colision_trampa.png";
+		datos.jump_left.src="views/img/jugador/jump_left.png";
+		datos.jump_right.src="views/img/jugador/jump_right.png";
+		datos.run_left.src="views/img/jugador/run_left.png";
+		datos.run_right.src="views/img/jugador/run_right.png";
+		datos.stop_left.src="views/img/jugador/stop_left.png";
+		datos.stop_right.src="views/img/jugador/stop_right.png";
+		datos.colisionesBalas.src="views/img/utileria/colisionesBalas.png";
+		datos.colisionesBalasEnemigos.src="views/img/utileria/colisionesBalasEnemigos.png";
+		datos.colisionesMonedas.src="views/img/utileria/colisionesMonedas.png";
+		datos.colisionesTrampas.src="views/img/utileria/colisionesTrampas.png";
+		datos.monedas.src="views/img/utileria/monedas.png";
+		datos.trampas .src="views/img/utileria/trampas.png";
+   
+
+
+/*=============================================
 		PLANO 3
 		=============================================*/
+
+
 
 		datos.plano3 = new Image();
 		datos.plano3.src = "views/img/nivel"+nivel+"/plano3.png";
@@ -423,7 +462,20 @@ for(var i = 1; i <= 3; i++){
 
 		var cargarArchivos = [datos.plano0, datos.texturaPlataforma, datos.detalles,
 			 datos.plano1, datos.plano2, datos.plano3, datos.imgJugador, datos.imgEnemigos, datos.imgBalasEnemigos,
-			datos. imgDisparoJugador];
+			datos. imgDisparoJugador,
+			datos.colision_trampa,
+			datos.jump_left,
+			datos.jump_right,
+			datos.run_left,
+			datos.run_right,
+			datos.stop_left,
+			datos.stop_right,
+			datos.colisionesBalas,
+			datos.colisionesBalasEnemigos,
+			datos.colisionesMonedas,
+			datos.colisionesTrampas,
+			datos.monedas,
+			datos.trampas];
 		var numeroArchivos = 0;
 		var porcentaje = 0;
 
