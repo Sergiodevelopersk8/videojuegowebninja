@@ -62,7 +62,8 @@ if(tecla.keyCode == 39){datos.derecha = true;}
 if(tecla.keyCode == 38){datos.salto = true; datos.sSaltoJugador.play();}
 if(tecla.keyCode == 32){datos.disparo = true; datos.disparo_y = datos.jugador_y; datos.movDisparoJugador=0;
 
-  datos.imgDisparoJugador.src=datos.imgDisparoJugador.src;
+  
+  datos.imgDisparoJugador.src = datos.balasJugador.src;
   datos.disparo_ancho = 15;
   datos.disparo_alto = 15; 
 datos.sDisparoJugador.play();}
@@ -1004,9 +1005,9 @@ xhr_trampas.onreadystatechange = function(){
 		=============================================*/
 
 	/*	datos.imgEnemigos = new Image();
-		datos.imgEnemigos.src = "views/img/utileria/enemigos.png";
+		datos.imgEnemigos.src = datos.enemigos.src;
 		datos.imgBalasEnemigos = new Image();
-		datos.imgBalasEnemigos.src = "views/img/utileria/balasEnemigos.png";*/	
+		datos.imgBalasEnemigos.src = datos.balasEnemigos.src;*/	
 for(var i = 1; i <= 3; i++){
 	
 		if(datos.nivel == i){

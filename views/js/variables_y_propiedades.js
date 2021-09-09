@@ -124,7 +124,8 @@ var datos={
      colisionesTrampas:null,
      monedas:null,
      trampas:null,
-     balasEnemigos:null
+     balasEnemigos:null,
+     balasJugador:null
 
 
   }

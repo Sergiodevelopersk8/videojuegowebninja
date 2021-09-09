@@ -124,7 +124,7 @@ datos.listaSonidos[i].muted = false;
 		datos.monedas= new Image();
 		datos.trampas = new Image();
         datos.balasEnemigos = new Image();
-
+datos.balasJugador = new Image();
 		datos.colision_trampa.src="views/img/jugador/colision_trampa.png";
 		datos.jump_left.src="views/img/jugador/jump_left.png";
 		datos.jump_right.src="views/img/jugador/jump_right.png";
@@ -139,6 +139,7 @@ datos.listaSonidos[i].muted = false;
 		datos.monedas.src="views/img/utileria/monedas.png";
 		datos.trampas.src="views/img/utileria/trampas.png";
    datos.balasEnemigos.src="views/img/utileria/balasEnemigos.png";
+   datos.balasJugador.src="views/img/utileria/balasJugador.png";
 
 
 /*=============================================
