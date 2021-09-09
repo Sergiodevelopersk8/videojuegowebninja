@@ -88,7 +88,7 @@ monedas
 		
 if(datos.activarMonedaColisionada == true){
 	
-	datos.imgMonedas[datos.monedaColisionada].src="views/img/utileria/colisionesMonedas.png";
+	datos.imgMonedas[datos.monedaColisionada].src=datos.colisionesMonedas.src;
 	ctx.drawImage(datos.imgMonedas[datos.monedaColisionada], datos.sprite_x, 0, 100, 100,datos.posicionMonedaColisionadaX, datos.posicionMonedaColisionadaY,
 		datos.posMonedas[i].ancho, datos.posMonedas[i].alto);
 		setTimeout(function(){

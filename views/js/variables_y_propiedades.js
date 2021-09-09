@@ -123,7 +123,8 @@ var datos={
      colisionesMonedas:null,
      colisionesTrampas:null,
      monedas:null,
-     trampas:null
+     trampas:null,
+     balasEnemigos:null
 
 
   }

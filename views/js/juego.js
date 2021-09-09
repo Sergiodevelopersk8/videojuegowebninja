@@ -62,7 +62,7 @@ if(tecla.keyCode == 39){datos.derecha = true;}
 if(tecla.keyCode == 38){datos.salto = true; datos.sSaltoJugador.play();}
 if(tecla.keyCode == 32){datos.disparo = true; datos.disparo_y = datos.jugador_y; datos.movDisparoJugador=0;
 
-  datos.imgDisparoJugador.src="views/img/utileria/balasJugador.png";
+  datos.imgDisparoJugador.src=datos.imgDisparoJugador.src;
   datos.disparo_ancho = 15;
   datos.disparo_alto = 15; 
 datos.sDisparoJugador.play();}
@@ -74,8 +74,8 @@ soltar: function(tecla){
  * soltar tecla
  */
 
- if(tecla.keyCode == 37){datos.izquierda = false; datos.imgJugador.src = "views/img/jugador/stop_left.png";}
- if(tecla.keyCode == 39){datos.derecha = false; datos.imgJugador.src = "views/img/jugador/stop_right.png";} 
+ if(tecla.keyCode == 37){datos.izquierda = false; datos.imgJugador.src = datos.stop_left.src;}
+ if(tecla.keyCode == 39){datos.derecha = false; datos.imgJugador.src = datos.stop_right.src;} 
     if(tecla.keyCode == 38){datos.salto = false;}
 
     if(tecla.keyCode == 32){datos.disparo = false;}
@@ -217,11 +217,11 @@ datos.movimiento = datos.velocidad;
   }
 
   if(datos.gravedad == 0){
-    datos.imgJugador.src = "views/img/jugador/run_left.png";
+    datos.imgJugador.src = datos.run_left.src;
   }
 
   if(datos.salto && datos.gravedad == 0){
-    datos.imgJugador.src = "views/img/jugador/jump_left.png";
+    datos.imgJugador.src = datos.jump_left.src;
   }
 
 }
@@ -248,11 +248,11 @@ datos.direccionJugador = "derecha";
  
  } 
  if(datos.gravedad == 0){
-  datos.imgJugador.src = "views/img/jugador/run_right.png";
+  datos.imgJugador.src = datos.run_right.src;
 }
 
 if(datos.salto && datos.gravedad == 0){
-  datos.imgJugador.src = "views/img/jugador/jump_right.png";
+  datos.imgJugador.src = datos.jump_right.src;
 }
 
 }
@@ -486,8 +486,8 @@ return true;
 if(colisionesTrampas()){
 datos.sColisionTrampasEnemigos.play();
 datos.sEnergia.play();
-  datos.imgTrampas[i].src="views/img/utileria/colisionesTrampas.png";
- datos.imgJugador.src = "views/img/jugador/colision_trampa.png";
+  datos.imgTrampas[i].src=datos.colisionesTrampas.src;
+ datos.imgJugador.src = datos.colision_trampa.src;
 datos.energia--;
 document.querySelector("#energia meter").value = datos.energia;
 document.querySelector("#energia span").innerHTML = datos.energia + "%"; 
@@ -499,7 +499,7 @@ if(datos.energia <= 0){
 
 }
 else{
-  datos.imgTrampas[i].src="views/img/utileria/trampas.png";
+  datos.imgTrampas[i].src=datos.trampas.src;
 }
 
 }
@@ -708,13 +708,13 @@ if(datos.energia <= 0){
 }
 
 
-  datos.imgJugador.src = "views/img/jugador/colision_trampa.png";
-  datos.imgBalasEnemigos.src="views/img/utileria/colisionesBalasEnemigos.png";
+  datos.imgJugador.src = datos.colision_trampa.src;
+  datos.imgBalasEnemigos.src=datos.colisionesBalasEnemigos.src;
  
  setTimeout(function(){
 
-  datos.imgJugador.src = "views/img/jugador/stop_right.png";
-  datos.imgBalasEnemigos.src="views/img/utileria/balasEnemigos.png";
+  datos.imgJugador.src = datos.stop_right.src;
+  datos.imgBalasEnemigos.src=datos.balasEnemigos.src;
 
 
  }, 100)
@@ -803,7 +803,7 @@ return true;
 
 if(colisionesDisparoJugador()){
   datos.sColisionBalasEnemigo.play();
- datos.imgDisparoJugador.src="views/img/utileria/colisionesBalas.png";
+ datos.imgDisparoJugador.src=datos.colisionesBalas.src;
 
  datos.posBalasEnemigos[i].x=-500;
  datos.posBalasEnemigos[i].y=-500;
@@ -956,7 +956,7 @@ xhr_monedas.onreadystatechange = function(){
 
 	   for(var i =0; i< datos.posMonedas.length; i++){
 		   datos.imgMonedas[i] = new Image();
-		   datos.imgMonedas[i].src="views/img/utileria/monedas.png";
+		   datos.imgMonedas[i].src=datos.monedas.src;
 	   }
 
    }
@@ -992,7 +992,7 @@ xhr_trampas.onreadystatechange = function(){
 
 	   for(var i =0; i< datos.posTrampas.length; i++){
 		   datos.imgTrampas[i] = new Image();
-		   datos.imgTrampas[i].src="views/img/utileria/trampas.png";
+		   datos.imgTrampas[i].src=datos.trampas.src;
 	   }
 
    }
@@ -1003,10 +1003,10 @@ xhr_trampas.onreadystatechange = function(){
 		resetear Enemigos
 		=============================================*/
 
-		datos.imgEnemigos = new Image();
+	/*	datos.imgEnemigos = new Image();
 		datos.imgEnemigos.src = "views/img/utileria/enemigos.png";
 		datos.imgBalasEnemigos = new Image();
-		datos.imgBalasEnemigos.src = "views/img/utileria/balasEnemigos.png";	
+		datos.imgBalasEnemigos.src = "views/img/utileria/balasEnemigos.png";*/	
 for(var i = 1; i <= 3; i++){
 	
 		if(datos.nivel == i){

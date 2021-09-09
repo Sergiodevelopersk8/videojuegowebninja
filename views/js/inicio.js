@@ -123,7 +123,7 @@ datos.listaSonidos[i].muted = false;
 		datos.colisionesTrampas= new Image();
 		datos.monedas= new Image();
 		datos.trampas = new Image();
-   
+        datos.balasEnemigos = new Image();
 
 		datos.colision_trampa.src="views/img/jugador/colision_trampa.png";
 		datos.jump_left.src="views/img/jugador/jump_left.png";
@@ -137,8 +137,8 @@ datos.listaSonidos[i].muted = false;
 		datos.colisionesMonedas.src="views/img/utileria/colisionesMonedas.png";
 		datos.colisionesTrampas.src="views/img/utileria/colisionesTrampas.png";
 		datos.monedas.src="views/img/utileria/monedas.png";
-		datos.trampas .src="views/img/utileria/trampas.png";
-   
+		datos.trampas.src="views/img/utileria/trampas.png";
+   datos.balasEnemigos.src="views/img/utileria/balasEnemigos.png";
 
 
 /*=============================================
@@ -460,8 +460,16 @@ for(var i = 1; i <= 3; i++){
 		PRELOAD
 		=============================================*/
 
-		var cargarArchivos = [datos.plano0, datos.texturaPlataforma, datos.detalles,
-			 datos.plano1, datos.plano2, datos.plano3, datos.imgJugador, datos.imgEnemigos, datos.imgBalasEnemigos,
+		var cargarArchivos = [
+			datos.plano0, 
+			datos.texturaPlataforma,
+			datos.detalles,
+			datos.plano1,
+			datos.plano2,
+			datos.plano3,
+			datos.imgJugador,
+			datos.imgEnemigos, 
+		    datos.imgBalasEnemigos,
 			datos. imgDisparoJugador,
 			datos.colision_trampa,
 			datos.jump_left,
@@ -475,7 +483,9 @@ for(var i = 1; i <= 3; i++){
 			datos.colisionesMonedas,
 			datos.colisionesTrampas,
 			datos.monedas,
-			datos.trampas];
+			datos.trampas,
+			datos.balasEnemigos
+		];
 		var numeroArchivos = 0;
 		var porcentaje = 0;
 
