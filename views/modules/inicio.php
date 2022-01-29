@@ -151,6 +151,19 @@ else
 <div id="btnAmpliar" onclick="ampliar();">Ampliar juego</div>
 
 
+<!--=====================================
+CONTROLES DISPOSITIVO
+======================================-->
+<div id="controles">
+	
+	<div id="izquierda"></div>
+	<div id="derecha"></div>	
+	<div id="disparo"></div>
+	<div id="arriba"></div>
+
+</div>
+
+
 <!--========================================
 TABLERO
 ============================================-->
@@ -186,7 +199,7 @@ Energia
 <div id="energia">
 
 <p>ENERGÍA: </p>
-<meter id="medidaEnergia" value="100" min="0" max="100" high="40"></meter>
+<progress id="medidaEnergia" value="100" min="0" max="100" high="40"></progress>
 <span>100%</span>
 </div>
 
@@ -254,7 +267,7 @@ FINAL
 
 		<li>
 			<h3>ENERGÍA</h3>
-			<meter id="medidaEnergiaFinal" value="100" min="0" max="100" high="40" style="margin-top:40px"></meter>
+			<progress id="medidaEnergiaFinal" value="100" min="0" max="100" high="40" style="margin-top:40px"></progress>
 			<span id="totalEnergia">100%</span>
 			<h4 style="margin-top:20px" id="puntosEnergia">
 				<span>100</span> pts
@@ -285,7 +298,7 @@ FINAL
 
  <span>0%</span>
  <br>
- <meter value="0" min="0" max="100" high="90"></meter>
+ <progress value="0" min="0" max="100" high="90"></progress>
 
  </div>
 

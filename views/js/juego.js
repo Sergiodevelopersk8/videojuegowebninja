@@ -37,6 +37,70 @@ CONTROL DE SONIDO
   }
 
 },
+controles: function () {
+
+		/*=============================================
+		EVENTOS TOUCH
+		=============================================*/
+
+		document.querySelector("#izquierda").addEventListener("touchstart", function(e){
+			e.preventDefault();
+			datos.izquierda = true;
+		})
+
+		document.querySelector("#izquierda").addEventListener("touchend", function(e){
+			e.preventDefault();
+			datos.izquierda = false; 
+			datos.imgJugador.src = datos.stop_left.src;
+		})
+
+		document.querySelector("#derecha").addEventListener("touchstart", function(e){
+			e.preventDefault();
+			datos.derecha = true;
+
+		})
+
+		document.querySelector("#derecha").addEventListener("touchend", function(e){
+			e.preventDefault();
+			datos.derecha = false; 	
+			datos.imgJugador.src = datos.stop_right.src;
+		})
+
+		document.querySelector("#arriba").addEventListener("touchstart", function(e){
+			e.preventDefault();
+			datos.salto = true; datos.sSaltoJugador.play();
+
+		})
+
+		document.querySelector("#arriba").addEventListener("touchend", function(e){
+			e.preventDefault();
+			datos.salto = false;
+
+		})
+
+		document.querySelector("#disparo").addEventListener("touchstart", function(e){
+			e.preventDefault();
+			datos.disparo = true;
+			datos.disparo_y = datos.jugador_y;
+			datos.movDisparoJugador = 0;
+			datos.imgDisparoJugador.src = datos.imgDisparoJugador.src;
+			datos.disparo_ancho = 15;
+			datos.disparo_alto = 15;
+			datos.sDisparoJugador.play();
+		})
+
+		document.querySelector("#disparo").addEventListener("touchend", function(e){
+			e.preventDefault();
+			datos.disparo = false;
+
+		})
+
+
+
+
+
+
+},
 
     teclado: function(){
 
@@ -490,7 +554,7 @@ datos.sEnergia.play();
   datos.imgTrampas[i].src=datos.colisionesTrampas.src;
  datos.imgJugador.src = datos.colision_trampa.src;
 datos.energia--;
-document.querySelector("#energia meter").value = datos.energia;
+document.querySelector("#energia progress").value = datos.energia;
 document.querySelector("#energia span").innerHTML = datos.energia + "%"; 
 
 if(datos.energia <= 0){
@@ -701,7 +765,7 @@ if(colisionesBalasEnemigos()){
   datos.sColisionTrampasEnemigos.play();
   datos.sEnergia.play();
   datos.energia--;
-document.querySelector("#energia meter").value = datos.energia;
+document.querySelector("#energia progress").value = datos.energia;
 document.querySelector("#energia span").innerHTML = datos.energia + "%"; 
 
 if(datos.energia <= 0){
@@ -862,7 +926,7 @@ document.querySelector('#monedas span').innerHTML = datos.contadorMonedas;
 Resetear energia
  ====================================*/
 datos.energia=100;
-document.querySelector('#energia meter').value = datos.energia;
+document.querySelector('#energia progress').value = datos.energia;
 //document.querySelector('#monedas span').innerHTML = datos.energia + "%";
 document.querySelector('#energia span').innerHTML = datos.energia + "%";
 

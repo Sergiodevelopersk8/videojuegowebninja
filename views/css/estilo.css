@@ -337,7 +337,7 @@ font-weight: bold;
 font-size: 15px;
 }
 
-#contenedor #tablero #energia meter{
+#contenedor #tablero #energia progress{
 
 float: left;
 width: 200px;
@@ -610,24 +610,151 @@ footer{
 }
 
 
-/***=====================
-Pantalla Vertical
-=======================**/
+
+
+/*=============================================
+PANTALLA VERTICAL
+=============================================*/
 
 #vertical{
-    display: none;
+	display:none;
 }
 
 @media all and (orientation: portrait){
-    #contenedor{
-        display: none;
-    }
-    #vertical{
-        display: block;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        z-index: 1;
-        background: url(../img/vertical.jpg);
-    }
+	
+	#contenedor{
+		display:none;
+	}
+
+	#vertical{
+		display:block;
+		position:fixed;
+		width:100%;
+		height:100vh;
+		z-index:1;
+		background:url(../img/vertical.jpg);
+		background-size:cover;
+		background-position:center;
+	}
+
+}
+
+/*=============================================
+PANTALLA DISPOSITIVOS TOUCH
+=============================================*/
+
+#instruccionesTouch{
+	display:none;
+}
+
+#ingresoSinFacebook{
+	display:none;
+}
+
+#controles{
+	display:none;
+}
+
+@media only screen and (max-width:1024px){
+
+	#ingresoFacebook, #btnCompartir{
+		display: none;
+	}
+	
+	#instruccionesTouch{
+		display:block;
+		position: relative;
+		width:800px;
+		height: auto;
+		margin: auto;
+		z-index: 1;
+		border:20px solid #000;
+		border-radius:10px;
+	}
+
+	#instruccionesTouch button{
+		position:absolute;
+		width:50px;
+		height: 50px;
+		right:-30px;
+		top:-30px;
+		border-radius:100%;
+		color:white;
+		background:#000;
+		border:5px solid white;
+	}
+
+	#instruccionesTouch img{
+		width:100%;
+	}
+
+	#ingresoSinFacebook{
+		display:block;
+		position:absolute;
+		width:300px;
+		top:280px;
+		left:50%;
+		padding:20px;
+		background:rgba(0,0,0,.5);
+		margin-left:-150px;
+	}
+
+	#ingresoSinFacebook input{
+		padding:10px;
+		width:92%;
+		margin:5px 0;
+		border:2px solid silver;
+	}
+
+	#ingresoSinFacebook button{
+		padding:10px;
+		width:92%;
+		margin:5px 5%;
+		border:0;
+		background:#009;
+		color:white;		
+	}
+
+	#izquierda{
+		position:absolute;
+		left:60px;
+		bottom:25px;
+		width:80px;
+		height:80px;
+		background:url(../img/touch/controlFlecha.svg);
+	}
+
+	#derecha{
+		position:absolute;
+		left:180px;
+		bottom:25px;
+		width:80px;
+		height:80px;
+		transform: rotate(180deg);
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		background:url(../img/touch/controlFlecha.svg);
+	}
+
+	#arriba{
+		position:absolute;
+		right:60px;
+		bottom:25px;
+		width:80px;
+		height:80px;
+		transform: rotate(90deg);
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		background:url(../img/touch/controlFlecha.svg);
+	}
+
+	#disparo{
+		position:absolute;
+		right:180px;
+		bottom:25px;
+		width:80px;
+		height:80px;
+		background:url(../img/touch/controlDisparo.svg);
+	}
+
 }

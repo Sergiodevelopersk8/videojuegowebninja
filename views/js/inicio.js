@@ -4,9 +4,152 @@ METODOS DEL OBJETO INICIO
 
 var inicio = {
 
+/*=============================================
+METODOS salirInstructivo
+=============================================*/
+	 salirInstructivo : function () {
+		 document.querySelector("#instruccionesTouch").parentNode.removeChild(document.querySelector("#instruccionesTouch"));
+	 },
+
+
 	/*=============================================
 	METODO INGRESO A LA APLICACIÓN
 	=============================================*/
+
+	iniciar: function(){
+
+		if(window.matchMedia("(min-width:1025px)").matches){
+
+			FB.login(function(response){validarUsuario();}, {scope: 'public_profile, email'});
+
+			//
+
+			function validarUsuario(){
+
+				 FB.getLoginStatus(function(response) {statusChangeCallback(response);});
+
+			}
+
+			//
+
+			function statusChangeCallback(response){
+
+				 if(response.status === 'connected'){
+
+				 	testAPI();
+
+				 }else{
+
+				 	 document.querySelector("#ingresoFacebook").innerHTML += '<div style="color:white; text-align:center">¡Vuelve a intentarlo!</div>';
+				 }
+
+			}
+
+			//
+
+			function testAPI(){
+
+				FB.api('/me?fields=id,name,first_name,email,picture', function(response){
+
+					var xhr = new XMLHttpRequest();
+					var identificador = response.email;
+					var primer_nombre = response.first_name;
+					var foto = "http://graph.facebook.com/"+response.id+"/picture?type=large";
+					var url = "views/ajax/usuarios.php";
+					xhr.open("POST", url, true);
+					xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					xhr.send("identificador="+identificador+"& primer_nombre="+primer_nombre+"& foto="+foto);
+
+					xhr.onreadystatechange = function(){
+
+						if((xhr.readyState == 4) && (xhr.status == 200)){
+
+							if(xhr.responseText == "ok"){
+
+								window.location = "inicio";
+
+							}
+
+						}
+
+					}
+
+				 });
+
+			}
+
+		}else{	
+
+			if(document.querySelector("#email").value != "" && document.querySelector("#nombre").value != ""){
+
+				var xhr = new XMLHttpRequest();
+				var identificador = document.querySelector("#email").value;
+				var primer_nombre = document.querySelector("#nombre").value;
+				var foto = "views/img/intro/anonymous.png";
+				var url = "views/ajax/usuarios.php";
+				xhr.open("POST", url, true);
+				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				xhr.send("identificador="+identificador+"& primer_nombre="+primer_nombre+"& foto="+foto);
+				
+				xhr.onreadystatechange = function(){
+
+					if((xhr.readyState == 4) && (xhr.status == 200)){
+
+						if(xhr.responseText == "ok"){
+
+							window.location = "inicio";
+
+						}
+
+					}
+
+				}	
+
+			}		
+
+		}
+
+	},
+
+	/*=============================================
+	CERRAR FACEBOOK
+	=============================================*/
+
+	cerrarFacebook: function(){
+
+		FB.getLoginStatus(function(response){
+
+			 if(response.status === 'connected'){
+
+			 	FB.logout(function(response){
+
+			 		setTimeout(function(){window.location="salir";},500)			 		
+			 	
+			 	});
+
+			 }
+
+		});
+
+	},
+
+	/*=============================================
+	COMPARTIR EN FACEBOOK
+	=============================================*/
+
+	compartirFacebook: function(event){
+
+		var nombre = event.getAttribute("nombre");
+
+		FB.ui({
+		  method: 'share',
+		  display: 'popup',
+		  quote: '¡' +nombre+' ha gando '+datos.puntaje+' puntos en el nivel '+datos.nivel+', supera su puntaje!',
+		  href: 'http://tutoriales.byethost10.com/blackninja',
+		}, function(response){});
+
+	},
+
 
 	iniciar: function(){
 
@@ -44,10 +187,24 @@ var inicio = {
 ampliar();
 		datos.nivel = event.getAttribute("nivel");
 		datos.id = event.getAttribute("id");
+	document.querySelector("#contenedor");
 		/*if(screenfull.enabled){
 			screenfull.request(document.querySelector("#contenedor"));
 		}*/
 
+	/*=============================================
+	full screen
+	if(screenfull.enabled){
+			screenfull.request(document.querySelector("#contenedor"))
+		}
+
+		window.addEventListener("load", function(){ window. scrollTo(0, 0);});
+
+		document.addEventListener("touchmove", function(e){ e.preventDefault() });
+
+
+	=============================================*/
+	
 /*=============================================
 	Sonidos
 	=============================================*/
@@ -503,13 +660,13 @@ for(var i = 1; i <= 3; i++){
 			porcentaje = 100 / cargarArchivos.length;
 
 			document.querySelector("#carga span").innerHTML = Math.ceil(porcentaje * numeroArchivos) + "%";
-			document.querySelector("#carga meter").value = Math.ceil(porcentaje * numeroArchivos);
+			document.querySelector("#carga progress").value = Math.ceil(porcentaje * numeroArchivos);
 
 			if(numeroArchivos == cargarArchivos.length){
 
 				document.querySelector("#lienzo").style.display = "block";
 				document.querySelector("#tablero").style.display = "block";
-				
+				document.querySelector("#controles").style.display = "block";
 				document.querySelector("#btnAmpliar").style.display = "block";
 
 				document.querySelector("#carga").style.opacity = 0; 
@@ -519,7 +676,7 @@ for(var i = 1; i <= 3; i++){
 					document.querySelector("#carga").style.display = "none";
 					  
 				},10);  
-
+juego.controles();
 juego.teclado();
 juego.tiempo();
 

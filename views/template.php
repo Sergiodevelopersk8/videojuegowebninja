@@ -70,5 +70,25 @@ else
 <script src="views/js/lienzo.js"></script>
 <script src="views/js/ampliarCanvas.js"></script>
 <script src="views/js/screenfull.min.js"></script>
+
+<!---============================
+
+PANTALLA DE INICIO DISPOSITIVOS TOUCH
+==================================---->
+
+<meta name="viewport" content="user-scalable=no, maximum-scale=1.0, minimal-ui"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+<link rel="apple-touch-icon" size="152x152" href="views/img/touch/favicon152.png">
+
+
+
+<meta name="mobile-web-app-capable" content="yes"/>
+<link rel="shurtcut icon" size="196x196" href="views/img/touch/favicon196.png">
+
+
+<script>
+//aqui va la api de  facebook pero el host no lo admite 
+</script>
 </body>
 </html>
